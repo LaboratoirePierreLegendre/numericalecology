@@ -1,0 +1,221 @@
+#!/usr/bin/env ruby
+
+# A few helpful tips about the Rules file:
+#
+# * The string given to #compile and #route are matching patterns for
+#   identifiers--not for paths. Therefore, you can’t match on extension.
+#
+# * The order of rules is important: for each item, only the first matching
+#   rule is applied.
+#
+# * Item identifiers start and end with a slash (e.g. “/about/” for the file
+#   “content/about.html”). To select all children, grandchildren, … of an
+#   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
+#   because “*” matches zero or more characters.
+
+compile '/stylesheet/' do
+  # don’t filter or layout
+  filter :relativize_paths, :type => :css
+end
+
+compile '/data/' do
+  filter :kramdown
+  layout 'default'
+  filter :relativize_paths, :type => :css
+  filter :relativize_paths, :type => :html
+end
+
+compile '/donnees/' do
+  filter :kramdown
+  layout 'default'
+  filter :relativize_paths, :type => :css
+  filter :relativize_paths, :type => :html
+end
+
+compile '/Reprints/' do
+  filter :kramdown
+  layout 'default'
+  filter :relativize_paths, :type => :css
+  filter :relativize_paths, :type => :html
+end
+
+compile '/FonctionsR/' do
+  filter :kramdown
+  layout 'default'
+  filter :relativize_paths, :type => :css
+  filter :relativize_paths, :type => :html
+end
+
+compile '/Rcode/' do
+  filter :kramdown
+  layout 'default'
+  filter :relativize_paths, :type => :css
+  filter :relativize_paths, :type => :html
+end
+
+compile '/old/' do
+  filter :kramdown
+  layout 'default'
+  filter :relativize_paths, :type => :css
+  filter :relativize_paths, :type => :html
+end
+
+compile '/old/R/' do
+  filter :kramdown
+  layout 'default'
+  filter :relativize_paths, :type => :css
+  filter :relativize_paths, :type => :html
+end
+
+compile '/old/R/v3/' do
+  filter :kramdown
+  layout 'default'
+  filter :relativize_paths, :type => :css
+  filter :relativize_paths, :type => :html
+end
+
+compile '/old/R/v3/description/' do
+  filter :kramdown
+  layout 'default'
+  filter :relativize_paths, :type => :css
+  filter :relativize_paths, :type => :html
+end
+
+compile '/old/R/v4/' do
+  filter :kramdown
+  layout 'default'
+  filter :relativize_paths, :type => :css
+  filter :relativize_paths, :type => :html
+end
+
+compile '/lex/' do
+  filter :erb
+  layout 'default'
+  filter :relativize_paths, :type => :css
+  filter :relativize_paths, :type => :html
+end
+
+compile '/cca_bib/' do
+  filter :erb
+  layout 'default'
+  filter :relativize_paths, :type => :css
+  filter :relativize_paths, :type => :html
+end
+
+compile '/cca_bib/methods/' do
+  filter :erb
+  layout 'default'
+  filter :relativize_paths, :type => :css
+  filter :relativize_paths, :type => :html
+end
+
+compile '/cca_bib/organisms/' do
+  filter :erb
+  layout 'default'
+  filter :relativize_paths, :type => :css
+  filter :relativize_paths, :type => :html
+end
+
+compile '/cca_bib/subjects/' do
+  filter :erb
+  layout 'default'
+  filter :relativize_paths, :type => :css
+  filter :relativize_paths, :type => :html
+end
+
+compile '/numecolR/' do
+  # don’t filter or layout
+end
+
+
+compile '*' do
+  if item.binary?
+    # don’t filter binary items
+  else
+    filter :erb
+    layout 'default'
+    filter :relativize_paths, :type => :css
+    filter :relativize_paths, :type => :html
+  end
+end
+
+route '/stylesheet/' do
+  '/style.css'
+end
+
+route '/data/' do
+  '/data/index.html'
+end
+
+route '/donnees/' do
+  '/donnees/index.html'
+end
+
+route '/Reprints/' do
+  '/Reprints/index.html'
+end
+
+route '/FonctionsR/' do
+  '/FonctionsR/index.html'
+end
+
+route '/Rcode/' do
+  '/Rcode/index.html'
+end
+
+route '/old/' do
+  '/old/index.html'
+end
+
+route '/old/R/' do
+  '/old/R/index.html'
+end
+
+route '/old/R/v3/' do
+  '/old/R/v3/index.html'
+end
+
+route '/old/R/v3/description/' do
+  '/old/R/v3/description/index.html'
+end
+
+route '/old/R/v4/' do
+  '/old/R/v4/index.html'
+end
+
+route '/lex/' do
+  '/lex/index.html'
+end
+
+route '/cca_bib/' do
+  '/cca_bib/index.html'
+end
+
+route '/cca_bib/methods/' do
+  '/cca_bib/methods/index.html'
+end
+
+route '/cca_bib/organisms/' do
+  '/cca_bib/organisms/index.html'
+end
+
+route '/cca_bib/subject/' do
+  '/cca_bib/subject/index.html'
+end
+
+route '/numecolR/' do
+  '/numecolR/index.html'
+end
+
+route '*' do
+  if item.binary?
+    # Write item with identifier /foo/ to /foo.ext
+    item.identifier.chop + '.' + item[:extension]
+  elsif item.identifier == '/'
+    '/index.html'
+  else
+    item.identifier.chop + '.html'
+  end
+end
+
+layout '*', :erb
