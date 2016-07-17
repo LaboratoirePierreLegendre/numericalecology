@@ -1,0 +1,4 @@
+.Rhistory
+*.tar.gz
+*.so
+*.o

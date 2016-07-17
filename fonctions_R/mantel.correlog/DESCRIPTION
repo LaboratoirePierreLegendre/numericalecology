@@ -1,0 +1,13 @@
+Package: mantel.correlog
+Type: Package
+Version: 1.4
+Date: 2009-08-23
+Title: Mantel correlogram
+Author:  Pierre Legendre
+Maintainer: Pierre Legendre <pierre.legendre@umontreal.ca>
+Depends: vegan
+Description: Compute a multivariate Mantel correlogram.
+License: copyleft
+LazyLoad: yes
+Revision: 0
+Packaged: August 23 2009
