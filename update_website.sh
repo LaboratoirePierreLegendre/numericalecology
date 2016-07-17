@@ -1,30 +1,36 @@
 #!/bin/sh
 
-cd /Users/numericalecology/numecol
+# Update the whole folder to the latest
+cd /Users/numericalecology/numericalecology
+
 /usr/bin/git pull origin master
+
+# Update main website
+pushd numecol
 nanoc compile
 if [ $? -eq 0 ];
 then
   rsync -avz output/ /Users/numericalecology/Sites/ --delete --exclude Streaming
 fi
+popd
 
-cd /Users/numericalecology/Reprints
-/usr/bin/git pull origin master
+pushd Reprints
 if [ $? -eq 0 ];
 then
   rsync -avz . /Users/numericalecology/Sites/Reprints/ --exclude .git
 fi
+popd
 
-cd /Users/numericalecology/labo
+pushd labo
 rsync -avz . /Users/numericalecology/Sites/labo/ --exclude .git --exclude ".DS_Store"
+popd
 
-cd /Users/numericalecology/prog
+pushd prog
 #mkdir -p /Users/numericalecology/Sites/labo
-/usr/bin/git pull origin master
 if [ $? -eq 0 ];
 then
 #  rsync -avz . /Users/numericalecology/Sites/labo/ --exclude .git --exclude ".DS_Store" -exclude README.md
-  ditto /Users/numericalecology/prog /Users/numericalecology/Sites/labo
+  ditto . /Users/numericalecology/Sites/labo
   rm -rf /Users/numericalecology/Sites/labo/.git
 fi
 
