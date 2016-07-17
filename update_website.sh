@@ -21,10 +21,7 @@ then
 fi
 popd
 
-pushd labo
-rsync -avz . /Users/numericalecology/Sites/labo/ --exclude .git --exclude ".DS_Store"
-popd
-
+# Note: folder 'prog' is represented as 'labo' on the website
 pushd prog
 #mkdir -p /Users/numericalecology/Sites/labo
 if [ $? -eq 0 ];
