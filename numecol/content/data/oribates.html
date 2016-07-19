@@ -8,40 +8,41 @@ title: Oribatid mite data set | NumericalEcology.com
 <p>
 This data set contains 3 files. Data on a line are separated by tabs.
 <p>
-1) Oribatida:    35 species (rows) x 70 sites (columns).
+1) Mite.txt: 70 sites (rows) x 35 morphospecies (columns). The sampling units are substrate cores 5 cm in diameter and 10 cem in depth, hereafter called "cores".
 <br>
-2) Coord.xy: 70 sites (rows) x 2 coordinates, in m, in Cartesian plane (columns).
+2) Mite_xy.txt: 70 cores (rows) x 2 coordinates in m, in Cartesian plane (columns).
 <br>
-3) Environ:  70 sites (rows) x 5 environmental variables (columns):
+3) Mite_env.txt: 70 cores (rows) x 5 environmental variables (columns).
 <p>
 <BLOCKQUOTE>
-   Substrate (nominal variable):
-<OL TYPE=1 START="1">
-      	<LI> Sphagnum group 1
-      	<LI> Sphagnum group 2
-      	<LI> Sphagnum group 3
-      	<LI> Sphagnum group 4
+    SubsDens: substratum density in g.L<sup><small>-1</small></sup> of dry uncompressed matter (quantitative variable)
+    <p/>
+    WatrCont: water content of the substratum, in percent of volume (quantitative variable)
+    <p/>
+
+    Substrate (nominal variable):
+    <OL TYPE=1 START="1">
+      	<LI> Sphagn1: Sphagnum group 1: Sphagnum magellanicum (with some S. rubellum)
+      	<LI> Sphagn2: Sphagnum goup 2: Sphagnum rubellum
+      	<LI> Sphagn3: Sphagnum group 3: Sphagnum nemoreum (with some S. angustifolium)
+      	<LI> Sphagn4: Sphagnum group 4: Sphagnum rubellum (with some S. magellanicum)
       	<LI> Litter
-      	<LI> Bare peat
-      	<LI> Interfaces between any of the previous
-</OL>
+      	<LI> Barepeat: bare peat
+      	<LI> Interface: interfaces between any of the previous
+    </OL>
 
-   Shrubs (nominal variable):
-<OL TYPE=1 START="1">
+    Shrubs (nominal variable):
+    <OL TYPE=1 START="1">
       	<LI> None
-      	<LI> A few
+      	<LI> Few
       	<LI> Many
-</OL>
-   
-   Microtopography of the substratum (binary variable):
-<OL TYPE=1 START="1">      	
-        <LI> Blanket (flat)
-        <LI> Hummock (raised)
-</OL>
-   
-   Substratum density in g.L<sup><small>-1</small></sup> of dry uncompressed matter (quantitative variable)
+    </OL>   
 
-   Water content of the substratum, in g.L<sup><small>-1</small></sup> (quantitative variable)
+    Microtopography of the substratum (binary variable):
+    <OL TYPE=1 START="1">      	
+        <LI> Blanket: flat
+        <LI> Hummock: raised
+    </OL>   
 </BLOCKQUOTE>      
 
 Please refer to the following papers if you use or refer to this data set in 

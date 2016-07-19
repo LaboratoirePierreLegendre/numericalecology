@@ -8,43 +8,42 @@ title: Jeu de donn&eacute;es Oribates | NumericalEcology.com
 
 Ce jeu de donn&eacute;es comprend 3 fichiers. Sur chaque ligne les donn&eacute;es sont s&eacute;par&eacute;es par des tabulateurs.
 <p>
-1) Oribatida: 35 esp&egrave;ces (lignes) x 70 &eacute;l&eacute;ments d&#8217;&eacute;chantillonnage (colonnes).
-Les &eacute;l&eacute;ments d&#8217;&eacute;chantillonnage sont des carottes de sol de 5 cm de diam&egrave;tre et 10 cm de profondeur, appel&eacute;s ci-apr&egrave;s "carottes".
+1) Mite.txt: 70 sites (lignes) x 35 morpho-esp&egrave;ces (colonnes). Les &eacute;l&eacute;ments d&rsquo;&eacute;chantillonnage sont des carottes de sol de 5 cm de diam&egrave;tre et 10 cm de profondeur, appel&eacute;s ci-apr&egrave;s &quot;carottes&quot;.
 <br>
-2) Coord.xy: 70 carottes (lignes) x 2 coordonn&eacute;es (colonnes), en m&egrave;tres, dans un plan cart&eacute;sien.
+2) Mite_xy.txt: 70 carottes (lignes) x 2 coordonn&eacute;es en m, sur un plan Cart&eacute;sien (colonnes).
 <br>
-3) Environ.: 70 carottes (lignes) x 5 variables environnementales (colonnes):
+3) Mite_env.txt: 70 carottes (lignes) x 5 variables environnementales (colonnes).
 <p>
 <BLOCKQUOTE>
-Substrat (variable nominale):
-<OL TYPE=1 START="1">
-		<LI>Sphaignes, groupe d&#8217;esp&egrave;ces 1
-		<LI>Sphaignes, groupe d&#8217;esp&egrave;ces 2
-		<LI>Sphaignes, groupe d&#8217;esp&egrave;ces 3		
-        <LI>Sphaignes, groupe d&#8217;esp&egrave;ces 4
-		<LI>Liti&egrave;re
-		<LI>Tourbe nue
-		<LI>Interfaces entre deux des groupes pr&eacute;c&eacute;dents
-</OL>
+    SubsDens: densit&eacute; du substrat en g.L<sup><small>-1</small></sup> de mati&egrave;re s&egrave;che non comprim&eacute;e (variable quantitative)
+    <p/>
+    WatrCont: contenu en eau du substrat, en pourcent du volume (variable quantitative)
+    <p/>
 
-Buissons (variable nominale):
-<OL TYPE=1 START="1">
-		<LI>Aucun
-		<LI>Peu
-		<LI>Beaucoup
-</OL>
+    Substrate (variable nominale &quot;substrat&quot;):
+    <OL TYPE=1 START="1">
+        <LI>Sphagn1: Sphaignes, groupe d&rsquo;esp&egrave;ces 1: Sphagnum magellanicum (with some S. rubellum)
+        <LI>Sphagn2: Sphaignes, groupe d&rsquo;esp&egrave;ces 2: Sphagnum rubellum
+        <LI>Sphagn3: Sphaignes, groupe d&rsquo;esp&egrave;ces 3: Sphagnum nemoreum (with some S. angustifolium)		
+        <LI>Sphagn4: Sphaignes, groupe d&rsquo;esp&egrave;ces 4: Sphagnum rubellum (with some S. magellanicum)
+        <LI>Litter: liti&egrave;re
+        <LI>Barepeat: tourbe nue
+        <LI>Interface: interfaces entre deux des groupes pr&eacute;c&eacute;dents
+    </OL>
 
-Microtopographie du substrat:
-<OL TYPE=1 START="1">
-		<LI>Replat
-		<LI>Butte
-</OL>
-   
-Densit&eacute; du substrat en g.L<sup><small>-1</small></sup> de mati&egrave;re s&egrave;che non comprim&eacute;e (variable quantitative)
-<p>
-Contenu en eau du substrat en g.L<sup><small>-1</small></sup>  (variable quantitative)
+    Shrub: variable nominale &quot;buissons&quot;:
+    <OL TYPE=1 START="1">
+        <LI>None: aucun
+        <LI>Few: peu
+        <LI>Many: beaucoup
+    </OL>
+
+    Microtopographie du substrat:
+    <OL TYPE=1 START="1">
+        <LI>Blanket: tapis (plat)
+        <LI>Hummock: butte (&eacute;lev&eacute;e)
+    </OL>
 </BLOCKQUOTE>      
-
 
 Si vous utilisez ou faites r&eacute;f&eacute;rence &agrave; ce jeu de donn&eacute;es dans une th&egrave;se ou une publication scientifique, veuillez s.v.p. citer les articles suivants:
 <ul>
