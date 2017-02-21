@@ -39,6 +39,13 @@ compile '/Reprints/' do
   filter :relativize_paths, :type => :html
 end
 
+compile '/Trieste16/' do
+  filter :kramdown
+  layout 'default'
+  filter :relativize_paths, :type => :css
+  filter :relativize_paths, :type => :html
+end
+
 compile '/FonctionsR/' do
   filter :kramdown
   layout 'default'
@@ -153,6 +160,10 @@ end
 
 route '/Reprints/' do
   '/Reprints/index.html'
+end
+
+route '/Trieste16/' do
+  '/Trieste16/index.html'
 end
 
 route '/FonctionsR/' do
