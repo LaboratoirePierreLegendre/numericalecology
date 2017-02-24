@@ -4,6 +4,11 @@
 cd /Users/numericalecology/numericalecology
 
 /usr/bin/git pull origin master
+if [ $? -ne 0 ];
+then
+  echo "There was an issue with the git update. Exiting."
+  exit 1
+fi
 
 # Update main website
 pushd numecol
