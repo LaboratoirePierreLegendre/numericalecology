@@ -100,6 +100,10 @@ a:hover {
   line-height: 20px;
 }
 
+li.courses {
+    margin: 10px 0;
+}
+
 .loadEpisodeButton {
 	width: 44px;
 	height:44px;
