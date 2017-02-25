@@ -100,7 +100,7 @@ a:hover {
   line-height: 20px;
 }
 
-li.courses {
+#sidebar li.courses {
     margin: 10px 0;
 }
 
