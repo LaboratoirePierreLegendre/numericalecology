@@ -1,4 +1,4 @@
-`CA` <- 
+`CA.newr` <- 
    function(Y, use.svd=TRUE, cumfit.obj=TRUE, cumfit.var=TRUE)
 #
 # Compute correspondence analysis (CA).
@@ -11,7 +11,7 @@
 # For exercise, you may choose 'Table_9.11.txt' (small example from Chapter 9
 # of the manual) or 'Spiders_28x12_spe.txt' (larger data set, real data).
 #
-#           Pierre Legendre, UniversitŽ de MontrŽal, January 2008
+#           Pierre Legendre, Universite de Montreal, January 2008
 {
 # Begin internal functions
 sq.length <- function(vec) sum(vec^2)
@@ -82,8 +82,7 @@ if(use.svd) {
    }
 #
 rel.values = values/inertia
-cum.rel = rel.values[1]
-for(kk in 2:k) { cum.rel = c(cum.rel, (cum.rel[kk-1] + rel.values[kk])) }
+cum.rel <- cumsum(rel.values)
 #
 # Construct matrices V, Vhat, F, and Fhat for biplots, scalings 1 and 2
 V = diag(p.j^(-0.5)) %*% U
@@ -121,14 +120,14 @@ fit <- list(cumulfit.spe=cfit.spe, cumulfit.obj=cfit.obj)
 other <- list(U=U, Uhat=Uhat, F=F, Fhat=Fhat, site.names=site.names, sp.names=sp.names, Qbar=Qbar, call=match.call() )
 #
 out <- list(general=general, scaling1=scaling1, scaling2=scaling2, scaling3=scaling3, scaling4=scaling4, fit=fit, other=other)
-class(out) <- "CA"
+class(out) <- "CAnewr"
 out
 }
 
-`print.CA` <-
+`print.CAnewr` <-
     function(x, kk=5, ...)
 {
-if (!inherits(x, "CA")) stop("Object of class 'CA' expected")
+if (!inherits(x, "CAnewr")) stop("Object of class 'CAnewr' expected")
     cat("\nCorrespondence Analysis\n")
     cat("\nCall:\n")
     cat(deparse(x$other$call),'\n')
@@ -139,25 +138,25 @@ if (!inherits(x, "CA")) stop("Object of class 'CA' expected")
     cat(x$general$rel.values,'\n')
     cat("\nCumulative relative eigenvalues",'\n')
     cat(x$general$cum.rel,'\n')
-    kk <- min(length(x$general$values), kk)
-    if(!is.null(x$fit$cumulfit.spe)) {
-       cat("\nCumulative fit per species (",kk,"axes)",'\n')
-       print(x$fit$cumulfit.spe[,1:kk])
-       }
-    if(!is.null(x$fit$cumulfit.obj)) {
-       cat("\nCumulative fit of the objects (",kk,"axes)",'\n')
-       print(x$fit$cumulfit.obj[,1:kk])
-       }
+#    kk <- min(length(x$general$values), kk)
+#    if(!is.null(x$fit$cumulfit.spe)) {
+#       cat("\nCumulative fit per species (",kk,"axes)",'\n')
+#       print.default(x$fit$cumulfit.spe[,1:kk], digits=5)
+#       }
+#    if(!is.null(x$fit$cumulfit.obj)) {
+#       cat("\nCumulative fit of the objects (",kk,"axes)",'\n')
+#       print.default(x$fit$cumulfit.obj[,1:kk], digits=5)
+#       }
     cat('\n')
     invisible(x) 
 }
 
-`biplot.CA` <-
-function(x, xax=1, yax=2, scaling=1, aspect=1, cex=1, color.sites="black", color.sp="red",...)
+`biplot.CAnewr` <-
+function(x, xax=1, yax=2, scaling=1, aspect=1, cex=1, main=NULL, color.sites="black", color.sp="red",...)
 # xax and yax determine the axes that will be plotted.
 # Use aspect=NA to remove the effect of parameter 'asp' in the biplot.
 {
-if (!inherits(x, "CA")) stop("Object of class 'CA' expected")
+if (!inherits(x, "CAnewr")) stop("Object of class 'CAnewr' expected")
 if(length(x$general$values) < 2) stop("There is a single eigenvalue. No plot can be produced.")
 #
 sp.names = x$other$sp.names
@@ -217,7 +216,11 @@ plot(si[,c(xax,yax)], asp=aspect, pch=20, cex=cex, xlim=c(xmin,xmax), ylim=c(ymi
 text(si[,c(xax,yax)], labels=si.names, cex=cex, pos=4, offset=0.5, col=color.sites)
 points(sp[,c(xax,yax)], pch=22, cex=cex, col=color.sp)
 text(sp[,c(xax,yax)], labels=sp.names, cex=cex, pos=4, offset=0.5, col=color.sp)
-title(main = c("CA biplot",type), family="serif")
+if(is.null(main)) {
+   title(main = c("CA biplot",type), family="serif")
+   } else {
+   title(main = main, family="serif")
+   }
 #
 invisible()
 }
