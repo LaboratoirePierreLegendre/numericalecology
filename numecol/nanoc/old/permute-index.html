@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<meta name="generator" content="nanoc 3.3.1">
+</head>
+<body>
+    <div id="main">
+      			<h2 align="center">Permute! version 3.4 alpha 9</h2><h2 align="center">User's manual</h2><h3 align="center">Multiple regression over distance, ultrametric and additive matrices with permutation test</h3><h4>Last revision: Saturday, March 30, 2013 </h4><h4><a href="#VersionHistory">Version History</a></h4><a href="../download.html#Permuteversion34alpha">Download it here</a> <h3>Important</h3><blockquote><em>Permute!</em> 3.4 is a major update to the <em>Permute!</em> 3.2 program, despite the small change in version number. It has been made easier to use, faster and more error-tolerant. Hopefully you will find this program to be highly usable, much more than the previous version.This is <strong>alpha</strong> software, which means it is usable and the feature list is almost complete but not totally implemented.</blockquote><h4>What does <em>Permute!</em> do?</h4>This program computes a multiple regression of one or more independent variables over one dependent variable, and assesses the probability (<i>p</i>-value) of the regression coefficients and the associated R<sup><small>2</small></sup> (R-squared) using a permutational method described in Legendre, Lapointe and Casgrain (1994). It also allows the user to select the variables that contribute most to the variation through several procedures: backward elimination, forward selection and stepwise regression.<br>The program is remarkable in its use of appropriate permutation methods. If the variables represent distance matrices, ultrametric or additive trees, the permutation method accounts for it by generating a permuted distance matrix or tree.<h4>How to use the program</h4>Keeping with the philosophy of Macintosh programs, the author assumed that users do not like to read manuals. Hence the program's interface is as self-explanatory as possible, and has balloon help throughout. However, it assumes that the user is familiar with the contents of the Legendre, Lapointe and Casgrain (1994) paper, or at least with the concepts of multiple regression. To start the program, double-click on the icon. From the "File" menu, choose "Open..." and select your input file (<a href="#InputFileFormat">see below</a> for the file's format). You can also drag your input file and drop it on the program's icon. After a short delay, your file should appear in its own scrollable and resizable window, to show you what the program has read. You can then be sure that the program read your data file correctly.<em>Note</em><blockquote><small>The program has no way of knowing if your data file is corrupt. You should at least make a visual check on your data to ensure it has been read correctly.</small></blockquote>About threads...<blockquote>Starting with version alpha 2, the program is multi-threaded, allowing the user to run multiple, concurrent analyses and background tasks. This requires the Thread Manager, part of System 7.5 and later. You can also get an extension for earlier systems. The 68k and PPC versions will be multi-threaded if the Thread Manager is present. <!-- Unfortunately, the 68k+FPU version is not multi-threaded because Think Pascal does not work well with the Thread Manager and I can't get CodeWarrior to output FPU code that actually works. This situation will be adressed as time allows.--></blockquote>When at least one data file has been read, the File menu's "New analysis" item is enabled. Choosing it will cause the "Multiple regression" window to come to the front of the screen. If you have opened more than one data window, the multiple regression will be carried out for the topmost data file. The multiple regression window looks like this:<p align="center"><img src="../images/regressionWindow.gif" height="333" width="455" alt="[Gif picture of the regression window]" border="0"></p>The names of the variables will be different for your own data file.The features of this window are as follows:<p></p>
+<dl>
+<dt>Permutation method</dt>
+<dd>As discussed in Legendre, Lapointe and Casgrain (1994), there are three ways of permuting a distance matrix. Here, a fourth case (the simplest one) is added. If Y represents<ol>
+<li> A vector of values, with no matrix-like (distance) structure embedded: select "Vector". The values of the dependent variable will be permuted totally at random. This option may be used, for instance<ul>
+<li> to test the behavior of the permutation tests of significance against standard multiple regression software, all possible permutations being equally likely, or</li>
+<li> to test multiple regression done on variables that do not meet the distributional assumptions of the standard parametric tests used in multiple regression, or else</li>
+<li> when your variables have no particular structure to them, e.g. they are simply a list of <i>n</i> values measured at <i>n</i> stations.</li>
+</ul>
+</li>
+<li> A simple distance matrix (not a dendrogram or phylogenetic tree): select "Matrix". The rows and the columns of the original dependent distance matrix (Y) will be permuted at random in the manner of the Mantel test.</li>
+<li> A dendrogram (ultrametric tree): select "Double" (Lapointe and Legendre, 1991).</li>
+<li> A phylogenetic (additive) tree: select "Triple" (Lapointe and Legendre, 1992). In this case, you will need to indicate which object is the "Rooting Object" in the popup menu. This is necessary in order for the program to extract the star tree that forms the additive component of the phylogenetic tree.</li>
+</ol>
+<p></p>
+</dd>
+<dt> Number of permutations</dt>
+<dd> The number of times you want to randomize the Y variable under the null hypothesis. In a preliminary analysis, 99 is probably a good choice. However, for publication of results, 999 or more are recommended. Notice that we recommend "99", not "100". This is because the original coefficients are counted as equivalent to the results of a first permutation, as recommended by Hope (1968), bringing the total number of permutations to a round power of 10. This facilitates interpretation of the associated probabilities.<p></p>
+</dd>
+<dt>Dependent (Y) variable</dt>
+<dd> A standard Macintosh list used to choose any <em>one</em> variable to be used as the dependent variable in the regression. This is the variable that will be permuted during the test. The list of variables is found in the first line of your data file, as discussed in <a href="#InputFileFormat">input file format</a> below.<p></p>
+</dd>
+<dt>Independent (X) variable(s)</dt>
+<dd> Choose one or more (by clicking and dragging) from the list. You may easily select any combination of independent variables selections by using the Command key (<a href="http://www.apple.com/">Apple</a> key, left of the space bar) as in any Macintosh list.<p></p>
+</dd>
+<dt> Testing procedure</dt>
+<dd> The program allows to do four types of regression tests:<p></p>
+<ol>
+<li>The first one, dubbed "Simple test", computes the regression coefficients (<i>b</i>'s) of the selected variables (see below), permutes the data according to the permutation method you selected, and re-computes the regression coefficients <i>k</i> times, where <i>k</i> is the number of permutations. <p></p>
+</li>
+<li> Backward elimination procedure<br>With this procedure, all the user-selected variables (see below) are initially included. The permutation test is conducted, and at each step the independent variable whose partial regression coefficient has the highest <i>p</i>-value is dropped, provided that this probability is also higher than a predetermined and Bonferroni-corrected <i>p</i>-to-remove value, which the user must select from the popup menu<p></p>
+</li>
+<li> Forward selection procedure<br>This procedure is based on the fact that a variable should be included in the model if (a) it gives the equation with the most significant R<sup><small>2</small></sup> (Sokal and Rohlf, 1981) and (b) its b coefficient is significant at the Bonferroni-corrected p-to-enter level.<br>A forward selection procedure can be defined as follows: at each step, the independent matrix-variable is entered that produces the equation whose R<sup><small>2</small></sup> coefficient has the lowest probability, provided that this probability is also smaller than or equal to a predetermined Bonferroni-corrected p-to-enter value. This variable's b coefficient must also be significant at the p-to-enter level, again pending approval through Bonferroni's correction. If a tie occurs in the permutational probabilities, the value of the increment in R<sup><small>2</small></sup> is used as an additional selection criterion. Notice that we cannot use here the forward selection criterion based on the variable with the highest partial correlation, which is computationally simpler and is, in ordinary regression, equivalent to the one used here, because the relation between the values of the partial correlations and their associated probabilities may not hold, due to the special ways the permutations are performed in matrix regression.<br>The user must also select a p-to-enter value.<p></p>
+</li>
+<li> Stepwise regression<br>This procedure is a combination of the backward elimination and forward selection procedures. It consists in a forward selection where each forward step (at the <i>p</i>-to-enter level) is followed by a backward elimination (at the <i>p</i>-to-remove level), assessing the significance of all variables already entered in the model.<br><!--Stepwise regression is to be preferred to forward selection, since a variable, once entered, cannot be removed form the list by the forward selection procedure even if it becomes non-significant at some later stage.Of course, the user must select <I>p</I>-to-enter and <i>p</i>-to-remove values. Usual choices are 0.05 and 0.10.-->Unfortunately, stepwise regression is broken in the current version of Permute!, and the author does not have enough free time to go back and fix it. However, a forward selection followed by a backward elimination of the selected variables should provide a reasonable facsimile of a stepwise regression. <!--If you absolutely must use a stepwise regression procedure, you have two choices:<ol><li> If you can live with the 29-objects, 6-variables limitations of version 3.2, you can use that old version.<li> You can do a stepwise regression manually in this fashion:<ol><li> Do a simple test with all your included variables<li> Find out which is the most significant (lowest p, then highest |b|)<li> Remove the effect of the most significant variable by using it as Y in a multiple regression against all other variables, and keeping the residuals<li> Use the residual</ol></ol>--></li>
+</ol>
+<p></p>
+</dd>
+<dt>
+<strong>Close</strong> button</dt>
+<dd>Closes the Multiple regression window<p></p>
+</dd>
+<dt>
+<strong>Quick test</strong> button</dt>
+<dd> When you have selected your variable(s), you can press this button to see a summary (in the small window above) of regression coefficients (<i>b</i>, <i>t</i>-values and one-tail <i>p</i>-values). Note that these <i>p</i>-values are parametric, which means that they were obtained using an <i>F</i> table. <b>They are for information only</b>, since they were not computed through permutations. Still, they can help you make quick decisions. These probabilities should be identical to the values given by other statistical packages which do not use permutation methods.You can Select All in the Edit menu to select the Quick Test's results, which can then be copied to the clipboard as tab-delimited text.<p></p>
+</dd>
+<dt>
+<strong>Permute!</strong> button</dt>
+<dd> Press this button (or the "Enter" key) when you are ready to start the permutation test(s). <em>Tip</em>: if you also press the "Option" key while pressing this button, the computer will display start, end and total time for the run.</dd>
+</dl>
+<h4>Test results</h4>Test results are shown in a scrolling window. Currently, the program does not respond to user input while it is performing the computations. This will change in future revisions, but for now it means that exploratory analyses should be done with a limited number of permutations (e.g. 99 or 49, even 24 if the dataset is large). A good indication of the time needed to compute one permutation is to press the "Quick test" button and see how much time is necessary for the results to appear. Multiply that time by the number of permutations and you have an indication of the total time needed before results start to appear.The "Test results" window may be scrolled back and resized as desired. A run may have as many windows as the computer memory allows. You can copy the results to the clipboard (Edit menu... Copy), save them to a file (File menu... Save) and print them. There is a limit of 32,000 characters on the results window, the earlier characters being flushed as needed. In practice this limit is unlikely to be encountered, but the author is aware of the situation.<h4><a name="InputFileFormat">Input file format</a></h4>Although the computations are based on distance matrices, the program uses a clever scheme to simulate matrix-like behavior in vectors, in order to maximize memory usage, using some properties of symmetric matrices. If "A" is a distance matrix, and i and j are integers, the following will be true:<pre>    A(i,i) = 0    A(i,j) = A(j,i)</pre>Therefore, the only unique part (i.e., that cannot be deduced from information found elsewhere) in the matrix is the upper-triangular part, excluding the diagonal. Of course, the lower-triangular could have been used instead; we selected the upper-triangular arbitrarily.<br>Here is an illustration of the way the original distance matrices should be "unfolded":<p align="center"><img src="../images/unfoldedMatrix.gif" height="129" width="191" alt="[Gif picture of an unfolded distance matrix]" border="0"></p>The input file thus consist of the "unfolded" upper-triangular matrices, read by rows, in a vertical format similar to the one found in many spreadsheet applications. There are as many columns to the file as necessary, each column representing an unfolded, upper-triangular matrix-variable. Columns should be separated by tabs. The first line of the file should be the name of the matrix-variables (separated by tabs); up to 10 characters per variable name will be read by the program.Following are a series of distance matrices, followed by the corresponding input files. The input files consist of the "unfolded" upper triangular matrices (boldface values), excluding the diagonal. For each matrix, there is only one value per row in the input file.<p align="center"><img src="../images/matrixExample.gif" height="87" width="417" alt="[Gif picture of example distance matrices]" border="0"></p><blockquote>File name: MyInputFile.txtFile contents:<pre>Dependent      Indep.1     Indep.2     Indep.30.4            14.5        105         6.80.58           14          99          6.70.76           14          99          6.60.38           13.6        96          6.10.55           13          102         6.30.5            11.5        99          7</pre></blockquote><h4>Technical notes</h4><h5>Limitations removed in version 3.4</h5><blockquote>The previous version of the program required two files (one for the Y matrix-variable and one for the X1..Xn matrix-variables), and the order in which the X appeared in the file determined their names in the program. For instance, the third column of the file containing the X matrix-variables was always named "X3". Furthermore, there were several limitations in the previous version of the program, such as:<ul>
+<li>Maximum of 6 independent matrix-variables</li>
+<li>The number of lines in each file had to be an integer that satisfied the n(n-1)/2 relationship: you could have 105 lines in your input file (meaning 15 objects in the matrix: 15*14/2 = 105) but not 104 or 106, as these numbers do not correspond to an integer number of objects and hence, the data file can't be a distance matrix...</li>
+<li>Maximum of 29 objects (406 lines) in all input files</li>
+</ul>
+</blockquote><h5>Current limitations</h5><ul>
+<li> Maximum number of rows in a data file: 178,956,970<br>(CodeWarrior seems to accept a maximum size of MaxLongInt, or 2,147,483,647, but this is the highest Think Pascal allows me to go without complaining that a "variable of this type would be too large"...</li>
+<li> Maximum number of columns (variables) in a data file: 178,956,970</li>
+<li> <b>Note</b>: due to limitations in the List Manager if your matrix has more than 16,000 cells or so it will show up as blank. It will be used in its entirety for the computations, though.</li>
+</ul>
+<h5>Requirements</h5>Any Macintosh capable of running System 7.0 and up should be able to run Permute! 3.4, which has been tested on the following machines:<table border="1" width="100%" cellpadding="5">
+<tr>
+<td><b>Computer</b></td><td><b>Configuration</b></td><td><b>Processor</b></td><td><b>Time required</b></td></tr>
+<tr>
+<td>Macintosh Plus</td><td>4MB RAM, System 7.0.1</td><td>68000@16MHz </td><td>
+<b>[</b>Macro error: Can't call the script because the name "elapsedTime" hasn't been defined.<b>]</b></td></tr>
+<tr>
+<td>Macintosh II </td><td>8MB RAM, System 7.5.5</td><td>68020+FPU@16MHz</td><td>
+<b>[</b>Macro error: Can't call the script because the name "elapsedTime" hasn't been defined.<b>]</b></td></tr>
+<tr>
+<td>Macintosh II </td><td>8MB RAM, System 7.5.5</td><td>68020@16MHz<br>(no FPU)</td><td>
+<b>[</b>Macro error: Can't call the script because the name "elapsedTime" hasn't been defined.<b>]</b></td></tr>
+<tr>
+<td>Macintosh SE/30 </td><td>20MB RAM, System 7.5.5</td><td>68030+FPU@16MHz</td><td></td></tr>
+<tr>
+<td>Macintosh IIci </td><td>20MB RAM, System 7.5.5</td><td>68030+FPU@25MHz</td><td>
+<b>[</b>Macro error: Can't call the script because the name "elapsedTime" hasn't been defined.<b>]</b></td></tr>
+<tr>
+<td>PowerBook 160 </td><td>14MB RAM, System 7.5.3</td><td>68030@25MHz</td><td></td></tr>
+<tr>
+<td>Macintosh Classic II </td><td>4MB RAM, System 7.5.5</td><td>68030@16MHz</td><td>
+<b>[</b>Macro error: Can't call the script because the name "elapsedTime" hasn't been defined.<b>]</b></td></tr>
+<tr>
+<td>Power Macintosh 7100/66 </td><td>48MB RAM, System 7.5.5</td><td>PPC 601@66MHz<br>(256k L2 Cache)</td><td>
+<b>[</b>Macro error: Can't call the script because the name "elapsedTime" hasn't been defined.<b>]</b></td></tr>
+<tr>
+<td>Power Macintosh 7200/90 </td><td>64MB RAM, System 8.0</td><td>PPC 601@90MHz</td><td>
+<b>[</b>Macro error: Can't call the script because the name "elapsedTime" hasn't been defined.<b>]</b></td></tr>
+<tr>
+<td>Motorola StarMax 180 </td><td>80MB RAM, System 7.6.1</td><td>PPC 603e@180MHz</td><td>
+<b>[</b>Macro error: Can't call the script because the name "elapsedTime" hasn't been defined.<b>]</b></td></tr>
+<tr>
+<td>Power Macintosh 9600/350 </td><td>64MB RAM, System 7.6.1</td><td>PPC 604e@350MHz</td><td>
+<b>[</b>Macro error: Can't call the script because the name "elapsedTime" hasn't been defined.<b>]</b></td></tr>
+</table>
+<small>Times are for a forward selection (p-to-enter: 0.10) of 6 variables vs. Brain (Marsupial test dataset), 29 objects (406 lines in data file), Triple Permutation Test (root=29) and 999 permutations.</small>The program is compiled as a "fat binary", meaning it is PowerPC-native but will work fine on older, 680x0-based machines.<!--The program comes in two flavors, dubbed "Fat" and "68k+FPU". Simply run the flavor most suited to your computer: if you have a 68000-series computer without a floating-point unit (FPU) or a PowerPC, use the Fat version. If your processor is a 68020, 030 or 040 equipped with a FPU, you can use the 68k+FPU version which makes use of the FPU to provide a roughly tenfold speed increase compared to the Fat version on 68000.Note that some computers equipped with a 68020 or 030 processor do not come equipped with a FPU (though it can be added later), for instance the LC II, LC III and Classic II. Also, several Macintosh models were made with a 68LC040 processor (which lacks a FPU) instead of the 68040 for economy and power consumption reasons, notably the PowerBook 520. If you try to run the 68k+FPU flavor on a machine without a FPU, the program will crash at startup.--><h4>References</h4><blockquote>Hope, A. C. A. 1968. A simplified Monte Carlo significance test procedure. J. Roy. Stat. Soc. Ser. B 30: 582-598.<p>Lapointe, F.-J., and P. Legendre. 1991. The generation of random ultrametric matrices representing dendrograms. J. Class. 8: 177-200.</p>
+<p>Lapointe, F.-J. &amp; P. Legendre. 1992. <a href="../reprints/Syst%20Biol%2041a,%201992.pdf">A statistical framework to test the consensus among additive trees (cladograms)</a>. <i>Syst. Biol.</i> <b>41</b>: 158-171.</p>
+<p>Legendre, P., F.-J. Lapointe &amp; P. Casgrain. 1994. <a href="../reprints/Evolution%2048,%201994.pdf">Modeling brain evolution from behavior: a permutational regression approach</a>. <i>Evolution</i> <b>48</b>: 1487-1499.</p>
+<p>Sokal, R.R. and F.J. Rohlf. 1981. Biometry, second edition. W.H. Freeman and Co., San Francisco. 859 pp.</p>
+<p></p>
+</blockquote><h4><a name="StillToDo">Still to do</a></h4>Sorted by priority<li>Implement stepwise regression procedure (it does something now, but not the right thing!)</li><li>Allow user to cancel computations by pressing "Command-period"</li><li>Implement balloon help</li><li>Show a real print dialog (bypassed in this version)</li><li>Make preferences work correctly (allow user to set display font)</li><li>Add preference for text file creator, currently the free <a href="http://web.barebones.com/free/free.html">BBEdit Lite</a>
+</li><li>Use more sophisticated error-checking</li><li>Warn user when quitting with unsaved windows</li><li>Apple Event recordability (send events to oneself)</li><h5>Suggestions? Bugs?</h5>My electronic mail address is casgrain@invite.umontreal.ca<h5>Built with...</h5><li>Metrowerks CodeWarrior 8, 9, 10, Pro 1, Pro 2 and Pro 3</li>
+<li>Symantec THINK Pascal 4.02-4.5a1</li>
+<li>BareBones' BBEdit 2.2, 3.0 and 3.5</li>
+<li>Onyx QC 1.2.2</li>
+<li>Jasik' The Debugger</li>
+<li>Mathemaesthetics' Resorcerer</li>
+<li>TransSkel Pascal 2.6 (mod. PhC)</li>
+<li>Apple PowerBook 160, PowerMac 7100/66, PowerMac 7200/90, SuperMac S900/2x225<h5>Thanks to...</h5></li>
+<li>Pierre Legendre, for paying me to do this</li>
+<li>The people of Perpignan (esp. Yves &amp; Serge) for using it daily</li>
+<li>Daniel Borcard, for independent testing of the regression procedures on huge datasets</li>
+<li>Paul DuBois and Owen Harnett, for the early versions of TransSkel</li>
+<li>Ingemar Ragnemalm for TranSkel 2.6/PPC and some example code</li>
+<li>Peter N. Lewis for making his great example code available free
+    </li>
+</div>
+    <div id="sidebar">
+      <h2>Pierre Legendre</h2>
+      <ul>
+<li><a href="../index.html">Version française</a></li>
+        <li><a href="../indexEn.html">English version</a></li>
+        <li>
+            <a href="../FonctionsR/">Fonctions R</a>
+            /
+            <a href="../Rcode/">R Functions</a>
+        </li>
+        <li>
+            <a href="../donnees/">Jeux de données</a>
+            /
+            <a href="../data/">Datasets</a>
+        </li>
+        <li><a href="../Reprints/">Tirés-à-part / Reprints</a></li>
+        <hr>
+<li><a href="./">Anciens logiciels / Older software</a></li>
+      </ul>
+<h2>Cours</h2>
+      <ul style="margin-bottom:10px;">
+<li style="margin-bottom:10px;"><a href="http://biol09.biol.umontreal.ca/Bio6077/">BIO 6077: Analyse quantitative des données biologiques</a></li>
+        <li style="margin-bottom:10px;"><a href="../Trieste16/">Recent Advances in Analysis of Multivariate Ecological Data: Theory and Practice</a></li>
+      </ul>
+</div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-66121190-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<meta name="generator" content="nanoc 3.3.1">
+</head>
+<body>
+    <div id="main">
+      <h2>K-Means least-squares partitioning method</h2><h3>Updated July 27th, 2001</h3><small><a href="http://numericalecology.com/">Pierre Legendre</a><br>July 2001<br>Département de Sciences Biologiques<br>Université de Montréal<br></small>K-means is a least-squares partitioning method allowing users to divide a collection of objects into K groups. The theory is presented in all textbooks of numerical classification methods, including section 8.8 of <a href="#ref">Legendre and Legendre (1998)</a>. The program implements a simple alternating least-squaresalgorithm, the same one as used in the SAS FASTCLUS procedure. The algorithm iterates between two simple steps:<ul>
+<li>Compute cluster centroids and use them as new cluster seeds.</li>
+<li>Assign each object to the nearest seed.</li>
+</ul>Among the 20 or so algorithms that have been described for K-means partitioning, this one is known to be the fastest; it also has good convergence properties. In the course of the iterations, the program tries to minimise the sum, over all groups, of the squared within-group residuals, which are the distances of the objects to the respective group centroids. Convergence is reached when the objective function (i.e., the residual sum-of-squares) cannot be loweredany more. The groups obtained are such that they are geometrically as compact as possible around their respective centroids.Since K-means partitioning is one of the so-called “NP-hard problems”, no algorithm can guarantee that the absolute minimum of the objective function has been reached; any given run of K-means partitioning may end up in what is called a “local minimum” of the objective function. A strategy, described in the User's guide, helps users find a value of the objective function which is likely to represent the overall minimum.New in July 2001 is the ability to specify an initial list of centroids to start the K-Means partition with.<h3>Program availability</h3><ul>
+<li>
+<b><a href="../download.html#KMeans">Macintosh version</a> </b>	<ul>
+<li>Compiled versions of the program for any Macintosh computer (fat binary)		</li>
+<li>Program documentation, in Adobe <a href="http://www.adobe.com/prodindex/acrobat/readstep2.html">Acrobat</a> format	</li>
+</ul>
+</li>
+<li>
+<b><a href="../download.html#KMeans">32-bit DOS version</a> </b>(The executable file is a Win32 "console" executable, not a DOS executable. Therefore it cannot run under plain DOS, nor in a DOS window under Windows 3.x, only in Windows 95/98 or Windows NT consoles) 	<ul>
+<li>Compiled version of the program for Win32 compatible computers		</li>
+<li>Program documentation, in Adobe <a href="http://www.adobe.com/prodindex/acrobat/readstep2.html">Acrobat</a> format	</li>
+</ul>
+</li>
+</ul>
+<a name="ref">References:</a><br><blockquote>Legendre, P. &amp; Legendre, L. 1998. <i><a href="http://numericalecology.com/">Numerical Ecology</a>, 2nd English edition.</i> <a href="http://www.elsevier.nl/">Elsevier Science</a> BV, Amsterdam. xv + 853 pages. </blockquote>
+    </div>
+    <div id="sidebar">
+      <h2>Pierre Legendre</h2>
+      <ul>
+<li><a href="../index.html">Version française</a></li>
+        <li><a href="../indexEn.html">English version</a></li>
+        <li>
+            <a href="../FonctionsR/">Fonctions R</a>
+            /
+            <a href="../Rcode/">R Functions</a>
+        </li>
+        <li>
+            <a href="../donnees/">Jeux de données</a>
+            /
+            <a href="../data/">Datasets</a>
+        </li>
+        <li><a href="../Reprints/">Tirés-à-part / Reprints</a></li>
+        <hr>
+<li><a href="./">Anciens logiciels / Older software</a></li>
+      </ul>
+<h2>Cours</h2>
+      <ul style="margin-bottom:10px;">
+<li style="margin-bottom:10px;"><a href="http://biol09.biol.umontreal.ca/Bio6077/">BIO 6077: Analyse quantitative des données biologiques</a></li>
+        <li style="margin-bottom:10px;"><a href="../Trieste16/">Recent Advances in Analysis of Multivariate Ecological Data: Theory and Practice</a></li>
+      </ul>
+</div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-66121190-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

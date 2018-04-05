@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<meta name="generator" content="nanoc 3.3.1">
+</head>
+<body>
+    <div id="main">
+      <h2>Optimal Variable Weighting (OVW)</h2><small> <a href="http://www.info2.uqam.ca/~makarenv/">Vladimir Makarenkov</a> and <a href="http://numericalecology.com/">Pierre Legendre</a> <br>Département de Sciences Biologiques <br> Université de Montréal <br> C.P. 6128, succursale Centre-ville <br> Montréal, Québec H3C 3J7, Canada <br></small>This program performs optimal variable weighting for ultrametric and additive tree clustering, following the method proposed by <a href="#ref">De Soete (1986, 1988)</a>, as well as for K-means partitioning. It is described in <a href="#ref">Makarenkov &amp; Legendre</a>.<br>The program, which is available free of charge to academic users, provides some improvements and extra options, compared to <a href="#ref">De Soete's (1988)</a> program OVWTRE, which only implemented fitting to the first two families of clustering methods mentioned above. Given a rectangular data matrix Y (n,m), containing measurements of n objects on m variables, the procedure computes variable weights w(m) such that the resulting matrix of inter-object dissimilarities D(n,n) obtained from Y optimally satisfies either the ultrametric or the additive inequality, or optimally corresponds to a K-means partition with fixed number of groups K. The weights w are constrained to be nonnegative and their sum is equal to one.We used Polak-Ribiere's Conjugate Gradient Method (<a href="http://www.nr.com/">Numerical Recipes</a>, <a href="#ref">Press <i>et al.</i>, 1986</a>) to carry out the optimization process. Once the optimal variable weights are obtained in the case of the ultrametric or additive tree clustering, the resulting inter-object dissimilarities D can be subjected to any of the existing ultrametric or additive tree fitting procedures. See <a href="#ref">De Soete (1986)</a> or <a href="#ref">Makarenkov and Leclerc (1999)</a> for an overview of these methods. It is worth noting that sometimes only a local minimum can be obtained as a final result. Hence a good choice of initial weights is essential. According to our investigations an initial guess consisting of all equal weights (as implemented in De Soete's software OVWTRE) cannot guarantee reaching the global minimum. An interesting feature of program OVW, compared to OVWTRE, is that it allows users to restart the optimization procedure any number of times, using different random initial guesses for the weights. As a consequence, OVW usually obtains better results than OVWTRE in the case of ultrametric and additive clustering; optimization for K-means partitionning is not available in OVWTRE.Moreover, the optimization in OVW is carried out in the way allowing to avoid a degenerate trivial solution in the case of the additive clustering. Such a solution consists of giving a weight of 1 to any one variable and weights of 0 to all other variables.Another important feature not mentioned by <a href="#ref">De Soete (1986, 1988)</a> is that the global minimum of a function to minimize can be reached with several different sets of optimal weights w. This may lead to different inter-object dissimilarities matrices D, from which different hierarchies or additive trees can be inferred.<ul>
+<li>
+<b><a href="../download.html#OptimalVariableWeightingOVW">Macintosh version</a> </b><p></p>
+<ul>
+<li>C source code for Macintosh, which can be compiled using a C++ compiler	</li>
+<li>Compiled version of the program for Macintosh computers with a PowerPC processor	</li>
+<li>User's guide containing a detailed description of the problem, in Word 6 format	</li>
+<li>Sample files </li>
+</ul>
+</li>
+<li>
+<b><a href="../download.html#OptimalVariableWeightingOVW">32-bit DOS version</a> </b> (The executable file is a Win32 "console" executable, not a DOS executable. Therefore it cannot run under plain DOS, nor in a DOS window under Windows 3.x, only in Windows 95/98 or Windows NT consoles) <ul>
+<li>C source code for Win32, which can be compiled using a C++ compiler	</li>
+<li>Compiled version of the program for Win32 compatible computers	</li>
+<li>User's guide containing a detailed description of the problem, in Word 97 format	</li>
+<li>Sample files </li>
+</ul>
+</li>
+<li>
+<b><a href="../download.html#OptimalVariableWeightingOVW">Unix version</a> </b> <ul>
+<li>C source code for U<small>NIX</small>, which can be compiled using a C++ compiler	</li>
+<li>User's guide containing a detailed description of the problem, in A<small>SCII</small> format	</li>
+<li>Sample files 	</li>
+<li>
+<em>No executable program is distributed, it is assumed that you will compile your own for your flavor of U<small>NIX</small>.</em></li>
+</ul>
+</li>
+</ul>
+<a name="ref">References:</a><blockquote>De Soete, G. 1986. Optimal variable weighting for ultrametric and additive tree clustering. <i>Quality&amp;Quantity</i> <b>20</b>: 169-180. De Soete, G. 1988. OVWTRE: A program for optimal variable weighting for ultrametric and additive tree fitting. <i>Journal of Classification</i> <b>5</b>: 101-104. Makarenkov, V. &amp; Leclerc, B. 1999. An Algorithm for the fitting of a tree metric according to a weighted least-squares criterion. <i>Journal of Classification</i> <b>16</b>(1): 3-26.Makarenkov, V., Legendre, P. 2001. <a href="http://adn.biol.umontreal.ca/~numericalecology/Reprints/Optimal_Variable_Weighting.pdf">Optimal Variable Weighting for Ultrametric and Additive Trees and K-means Partitioning: Methods and Software</a>. <i>Journal of Classification</i> <b>18</b>: 245-271. Milligan, G.W. 1989. A validation study of a variable weighting algorithm for cluster analysis. <i>Journal of Classification</i> <b>6</b>: 53-71. Polak, E. 1971. Computational methods in optimization. New York, Academic Press: 2.3.Press, W. H., B. P. Flanery, S. A. Teukolsky &amp; W. T. Vetterling. (1986), <i><a href="http://www.nr.com/">Numerical Recipes</a> - The art of scientific computing</i>. Cambridge Univ. Press, Cambridge. xx + 818 p.</blockquote>
+    </div>
+    <div id="sidebar">
+      <h2>Pierre Legendre</h2>
+      <ul>
+<li><a href="../index.html">Version française</a></li>
+        <li><a href="../indexEn.html">English version</a></li>
+        <li>
+            <a href="../FonctionsR/">Fonctions R</a>
+            /
+            <a href="../Rcode/">R Functions</a>
+        </li>
+        <li>
+            <a href="../donnees/">Jeux de données</a>
+            /
+            <a href="../data/">Datasets</a>
+        </li>
+        <li><a href="../Reprints/">Tirés-à-part / Reprints</a></li>
+        <hr>
+<li><a href="./">Anciens logiciels / Older software</a></li>
+      </ul>
+<h2>Cours</h2>
+      <ul style="margin-bottom:10px;">
+<li style="margin-bottom:10px;"><a href="http://biol09.biol.umontreal.ca/Bio6077/">BIO 6077: Analyse quantitative des données biologiques</a></li>
+        <li style="margin-bottom:10px;"><a href="../Trieste16/">Recent Advances in Analysis of Multivariate Ecological Data: Theory and Practice</a></li>
+      </ul>
+</div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-66121190-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

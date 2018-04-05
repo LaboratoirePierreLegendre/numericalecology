@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<meta name="generator" content="nanoc 3.3.1">
+</head>
+<body>
+    <div id="main">
+      <h2>NesAnova</h2><h3>Nested Manova by Canonical Analysis</h3><small><a href="http://numericalecology.com/">Pierre Legendre</a><br>June 2002<br>Département de Sciences Biologiques<br>Université de Montréal<br></small>This program carries out nested multivariate analysis of variance (manova) by canonical redundancy analysis, with permutation testing, using 2 or 3 factors (i.e., one main factor plus 1 or 2 nested factors). If a single factor is present, the program computes simple manova with permutation test. The response table subjected to the analysis can be a single variable or a multivariate data table. The primary interest of this program is to allow nested analysis of variance to be carried out for community composition data (species presence-absence or abundance data tables). Three choices are open with such data:<ul>
+<li> If there are very few zeros in the species response data table, the abundances can be analysed directly without further transformation. This is a rare situation since community composition data are usually obtained across a gradient of some sort, natural or experimental, which aims at maximizing the observed variability, so that many species that have unimodal distributions along the gradient(s) (i.e., those that have an abundance optimum) are represented in the table by many zeros.</li>
+<li> In most cases, the community composition data (species presence-absence or abundance) are transformed in some way. This can be done using one of the transformations proposed by <a href="#ref">Legendre &amp; Gallagher (2001)</a>; these transformations are available in the program.</li>
+<li> An alternative method is to compute a matrix of ecological distances (D) among sites. For species presence-absence data, the one-complements of the indices of Jaccard or Sørensen are often used. For species abundance data, ecologists often rely upon the Steinhaus/Odum/Bray-Curtis distance function. Principal coordinate analysis of that D matrix produces a new rectangular data table that can be used as input for nested manova (<a href="#ref">Legendre &amp; Anderson 1999</a>).</li>
+</ul>The main output file “NesAnova.out” contains the results of the anova or manova. An additional output file, called “FittedSc.out”, contains a PCA of the fitted site scores for each factor in the analysis, as well as a PCA of the residuals.The permutation methods used in the program are described in the user'smanual distributed with the program.The user’s manual distributed with the program contains examples that describe how the factors, main and nested, should be coded using dummy variables. The programGENERATE_X, distributed with NesAnova, has been written to automaticallycode into dummy variables the factors of a nested anova comprising one mainfactor and 1 or 2 nested factors.<h3>Program availability</h3><ul>
+<li>
+<b><a href="../download.html#NesAnova">Macintosh Classic version (pre-OSX)</a> </b><ul>
+<li><a href="fortran.html">Fortran77</a>  source code for the Macintosh Language Systems Fortran compiler (file “NesAnova.f”). Users can modify the parameters (“Parameter” statement), at the beginning of the program, that set the maximum size of the data tables that can be analysed.</li>
+<li> Compiled version of the program for any Macintosh computer (fat binary) running any version of the MacOS anterior to OSX.</li>
+<li> Program documentation in <a href="http://www.adobe.com/prodindex/acrobat/readstep2.html">Acrobat</a> format.</li>
+<li> Sample data files.</li>
+</ul>
+</li>
+<li>
+<b><a href="../download.html#NesAnova">MacOSX version (Unix)</a> </b><ul>
+<li> <a href="fortran.html">GNU Fortran</a> source code for Mac OS X, Linux or other Unix-like operating systems (file “nesanova.for”), which can be compiled using any FORTRAN77 compiler.</li>
+<li> Compiled version of the program for MacOSX.</li>
+<li> Program documentation in <a href="http://www.adobe.com/prodindex/acrobat/readstep2.html">Acrobat</a> format.</li>
+<li> Sample data files.</li>
+</ul>
+</li>
+<li>
+<b><a href="../download.html#NesAnova">32-bit DOS version</a> </b>(The executable file is a Win32 "console" executable, not a DOS executable. It cannot run under plain DOS, nor in a DOS window under Windows 3.x, but only in Windows 95/98/Me or Windows NT/2000/XP consoles.)<ul>
+<li> <a href="fortran.html">GNU Fortran</a> source code for Windows (file “nesanova.for”), which can be compiled using any FORTRAN77 compiler.</li>
+<li> Compiled version of the program for Win32 compatible computers.</li>
+<li> Program documentation in <a href="http://www.adobe.com/prodindex/acrobat/readstep2.html">Acrobat</a> format.</li>
+<li> Sample data files.</li>
+</ul>
+</li>
+</ul>
+<a name="ref">References:</a><br><blockquote>Legendre, P. &amp; M. J. Anderson. 1999. <a href="http://adn.biol.umontreal.ca/~numericalecology/Reprints/db-RDA.pdf">Distance-based redundancy analysis: testing multi-species responses in multi-factorial ecological experiments</a>. <i>Ecological Monographs </i> <b>69</b> (1): 1-24.Legendre, P. and E. Gallagher. 2001. Ecologically meaningful transformations forordination of species data. <i>Oecologia</i> <b>129</b>: 271-280. (<a href="http://adn.biol.umontreal.ca/~numericalecology/Reprints/Legendre_&amp;_Gallagher.pdf">Reprint available</a>, © 2001 "Springer-Verlag". The original publication is available on <a href="http://link.springer.de/link/service/journals/00442/papers/1129002/11290271.pdf">http://link.springer.de/</a>)</blockquote>
+    </div>
+    <div id="sidebar">
+      <h2>Pierre Legendre</h2>
+      <ul>
+<li><a href="../index.html">Version française</a></li>
+        <li><a href="../indexEn.html">English version</a></li>
+        <li>
+            <a href="../FonctionsR/">Fonctions R</a>
+            /
+            <a href="../Rcode/">R Functions</a>
+        </li>
+        <li>
+            <a href="../donnees/">Jeux de données</a>
+            /
+            <a href="../data/">Datasets</a>
+        </li>
+        <li><a href="../Reprints/">Tirés-à-part / Reprints</a></li>
+        <hr>
+<li><a href="./">Anciens logiciels / Older software</a></li>
+      </ul>
+<h2>Cours</h2>
+      <ul style="margin-bottom:10px;">
+<li style="margin-bottom:10px;"><a href="http://biol09.biol.umontreal.ca/Bio6077/">BIO 6077: Analyse quantitative des données biologiques</a></li>
+        <li style="margin-bottom:10px;"><a href="../Trieste16/">Recent Advances in Analysis of Multivariate Ecological Data: Theory and Practice</a></li>
+      </ul>
+</div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-66121190-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../../../style.css" media="screen">
+<meta name="generator" content="nanoc 3.3.1">
+</head>
+<body>
+    <div id="main">
+      ---title: R 4.0 Progress Info---			<h1><img src="../../../../images/r4-icon-t.gif" height="32" width="32" align="bottom" alt="[R 4.0 Icon]" border="0">It's in the works!</h1><em>I apologize to my french-speaking colleagues. Though this page is not available in French, all the programs are fully bilingual. When the development cycle is completed, I will make sure this website is bilingual; for now, as things change rapidly, it's just not worth the effort.</em>Distribution of R 4.0 preview releases has <a href="telecharger.html">started</a>. I am working full-time on Version 4.0 and a more complete alpha release. Version 4.0 is now an integrated package, not a collection of separate modules. Up-to-the minute progres information is found below. Stay tuned by <a href="joindre-liste.html">subscribing to the mailing list</a> and bookmarking this page.<blockquote><img src="../../../../images/new2.gif" height="11" width="28" alt="New! " border="0"> You may now download the latest build directly from our ftp site:<ul>
+<li> <a href="ftp://ftp.umontreal.ca/pub/casgrain/labo/R/v4/in_progress/">ftp://ftp.umontreal.ca/pub/casgrain/labo/R/v4/in_progress/</a><p></p>
+</li>
+<li>
+<a href="ftp://biol09.biol.umontreal.ca/public_ftp/labo/R/v4/in_progress/">ftp://biol09.biol.umontreal.ca/public_ftp/labo/R/v4/in_progress/</a></li>
+</ul>
+</blockquote>Current progress (as of 30/03/13; 12:14:32) on version <b>4.0d10</b>, build <b><b>[</b>Macro error: The file "o Moof! o:Users:philippe:Projects:cvs:Progiciel_R:buildcount.data" wasn't found.<b>]</b></b>:<br>(modifications are in <b>bold</b>)<li>
+<strong>Currently being worked on:</strong>	<ul>
+<li>
+<a href="http://www.apple.com/macosx/">MacOS X</a> version	</li>
+<li>
+<a href="../../../../en/labo/R/v3/description/cocopan.html">Cocopan</a>	</li>
+<li>
+<a href="../../../../en/labo/R/v4/windows.html">Windows version</a> (preliminary tests)		<ul>
+<li>Common source code compiled in a .DLL with <a href="http://www.metrowerks.com/">CodeWarrior</a>		</li>
+<li>User Interface with <a href="http://www.borland.com/delphi/">Delphi</a>		</li>
+</ul>
+</li>
+<li>Integration of <a href="http://www.teleport.com/~stack/">StoneTable</a> to replace the List Manager 		<ul>
+<li>&gt;16k cells displayed		</li>
+<li>Non-scrolling row/col headers		</li>
+<li>Easy in-cell editing			<ul>
+<li>Row/col headers			</li>
+<li>Values within cells			</li>
+<li>Add/delete rows and columns (see Copy and Paste)			</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The User's manual is being written as the program is being developed, and is distributed with the program<p></p>
+<p>	</p>
+</li>
+</ul>
+</li>
+<li>
+<strong>What works and what's new in this version</strong>	<ul>
+<li>Import of <a href="http://www.microcomputerpower.com/catalog/canoco.html">C<small>ANOCO</small></a> files of any format	</li>
+<li>Modules		<ul>
+<li>
+<a href="../../../../en/labo/R/v3/description/simil.html">SIMIL</a> (Mard 09 mars 2004  at 23:14:37 by PhC)			<ul>
+<li>Similarity coefficients (between objects) tested against version 3				<ul>
+<li>S01 — (a+d)/(a+b+c+d) Simple matching coeff. (Sokal &amp; Michener)				</li>
+<li>S02 — (a+d)/(a+2b+2c+d) (Rogers &amp; Tanimoto)				</li>
+<li>S03 — (2a+2d)/(2a+b+c+2d)				</li>
+<li>S04 — (a+d)/(b+c)				</li>
+<li>S05 — (1/4) [a/(a+b) + a/(a+c) + d/(b+d) + d/(c+d)]				</li>
+<li>S06 — ad/√[(a+b)(a+c)(b+d)(c+d)]				</li>
+<li>S07 — a/(a+b+c) Coefficient of community (Jaccard)				</li>
+<li>S08 — 2a/(2a+b+c) (Sørensen, Dice)				</li>
+<li>S09 — 3a/(3a+b+c)				</li>
+<li>S10 — a/(a+2b+2c)				</li>
+<li>S11 — a/(a+b+c+d) (Russell &amp; Rao)				</li>
+<li>S12 — a/(b+c) (Kulczynski)				</li>
+<li>S13 — (1/2) [a/(a+b)+a/(a+c)] (Kulczynski)				</li>
+<li>S14 — a/√[(a+b)(a+c)] (Ochiai)				</li>
+<li>S15 — Σ(w[i] s[i])/Σ(w[i]) (Gower, symmetrical)				</li>
+<li>S16 — Σ(w[i] s'[i])/Σ(w[i]) (Estabrook &amp; Rogers)				</li>
+<li>S17 — 2W/(A+B) (Steinhaus)				</li>
+<li>S18 — (1/2) [(W/A) + (W/B)] (Kulczynski)				</li>
+<li>S19 — Σ(w[i] s[i])/Σ(w[i]) (Gower, asymmetrical)				</li>
+<li>S20 — Σ(w[i] s'[i])/Σ(w[i]) (Legendre &amp; Chodorowski)				</li>
+<li>S21 — Chi-square similarity (Roux &amp; Reyssac)				</li>
+<li>S22 — Chi-square probabilistic similarity				</li>
+<li>S23 — Goodall's probabilistic coefficient				</li>
+<li>S24 — [a/√((a+b)(a+c))] - 0.5√(a+c) (Fager &amp; McGowan)				</li>
+<li>S25 — 1 - p(Chi-square) (Krylov)				</li>
+<li>S26 — [ a + (d/2) ]/(a+b+c+d) (Faith)				</li>
+<li>NEI — Nei's genetic similarity (bounded between 0 and 1)				</li>
+</ul>
+</li>
+<li>Distance coefficients (between objects) tested against version 3				<ul>
+<li>D01 — Euclidean distance				</li>
+<li>D02 — Taxonomic, or average distance				</li>
+<li>D03 — Chord distance				</li>
+<li>D04 — Geodesic metric				</li>
+<li>D05 — Mahalanobis generalized distance (among groups)				</li>
+<li>D06 — Minkowski metric				</li>
+<li>D07 — Manhattan metric				</li>
+<li>D08 — Mean character difference  (Czekanowski)				</li>
+<li>D09 — Index of association (Whittaker)				</li>
+<li>D10 — Canberra metric (Lance &amp; Williams)				</li>
+<li>D11 — Coefficient of divergence (Clark)				</li>
+<li>D13 — Nonmetric coefficient (Watson, Williams &amp; Lance)				</li>
+<li>D14 — Percentage difference (Odum; Bray &amp; Curtis)				</li>
+</ul>
+</li>
+<li>R Mode coefficients (between variables) tested against version 3				<ul>
+<li>TAU — Kendall's Tau (new algorithm)				</li>
+<li>RP — Pearson's r				</li>
+<li>RS — Spearman's r				</li>
+<li>CHI — G statistic (Wilks' chi-square)				</li>
+<li>HT — Tschuproff's contingency coefficient				</li>
+<li>HS0 — (reciprocal information; Estabrook)				</li>
+<li>HS1 — (Rajski's coherence coefficient)				</li>
+<li>HS2 — (symmetric uncertainty coefficient)				</li>
+<li>HD — (Rajski's metric)				</li>
+</ul>
+</li>
+<li>New coefficients				<ul>
+<li>S27 — 1 - p(a): Raup &amp; Crick's modified probabilistic association coefficient (Raup &amp; Crick)				</li>
+<li>D15 — Chi-square metric (introduced in Simil 3.02)				</li>
+<li>D16 — Chi-square distance (introduced in Simil 3.02)				</li>
+<li>D17 — Hellinger distance				</li>
+</ul>
+</li>
+<li>Untested/Not yet implemented				<ul><li>D12 — Coefficient of racial likeness (among groups; Pearson)				</li></ul>
+</li>
+</ul>
+</li>
+<li>Correspondance Analysis		</li>
+<li>
+<a href="../../../../en/labo/R/v3/description/periodographe.html">Periodograph</a>		</li>
+<li>
+<a href="../../../../en/labo/R/v3/description/chrono.html">Chrono</a>		</li>
+<li>
+<a href="../../../../en/labo/R/v3/description/biogeo.html">Biogeo (spatially-constrained clustering)</a> (Vend 29 juin 2001  at 09:59:04 by PhC)		</li>
+<li>
+<a href="../../../../en/labo/R/v3/description/pncomp.html">PnComp (Principal components)</a> (Lund 07 mai 2001  at 14:25:48 by PhC)			<ul>
+<li>Works on any-sized matrix, as long as you have enough memory			</li>
+<li>Still missing				<ul>
+<li>Supplementary objects and descriptors				</li>
+<li>Pairwise deletion of missing values				</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="../../../../en/labo/R/v3/description/kmeans.html">K-Means</a> (Lund 12 mars 2001  at 15:46:52 by PhC)		</li>
+<li>
+<a href="../../../../en/labo/R/v3/description/mantel.html">Mantel</a> (Merc 14 févr 2001  at 16:18:21 by PhC)			<ul>
+<li>Partial Mantel correlation rewritten				<ul>
+<li>No longer uses Smouse, Long &amp; Sokal 1986				</li>
+<li>Works with both Mantel's r and Spearman's r				</li>
+</ul>
+</li>
+<li>Limited permutations with group selection 			</li>
+<li>Current correlation coefficients:				<ul>
+<li>Mantel's Z				</li>
+<li>Mantel's r 				</li>
+<li>Mantel's t (permutation-free probability approximation, useful for large, &gt; 30 objects datasets)				</li>
+</ul>
+</li>
+<li>Added correlation coefficients:				<ul>
+<li>Spearman's r				</li>
+<li>Kendall's Tau				</li>
+</ul>
+</li>
+<li>Left to do				<ul><li>P<small>ROTEST</small>: Procrustes statistic sensu Jackson, 1995.				</li></ul>
+</li>
+<li>Mantel's correlogram is now a part of module Autocor			</li>
+</ul>
+</li>
+<li>
+<a href="../../../../en/labo/R/v3/description/connexions.html">Links</a> (Merc 14 févr 2001  at 15:16:05 by PhC)		</li>
+<li>
+<a href="../../../../en/labo/R/v3/description/autocorrelation.html">Autocor</a> (Merc 29 mars 2000  at 11:29:57 by PhC)		</li>
+<li>
+<a href="../../../../en/labo/R/v3/description/groupements.html">Cluster</a> (Merc 08 mars 2000  at 16:43:00 by PhC)		</li>
+<li>
+<a href="../../../../en/labo/R/v3/description/vernorm.html">VerNorm</a> (Jeud 08 avri 1999  at 12:20:36 by PhC)			<ul>
+<li>Transpose any rectangular matrix (bugfix on Jeud 08 avri 1999)			</li>
+<li>Make data positive				<ul>
+<li>Simple translation of the data to a user-defined (positive) minimum				</li>
+<li>Useful for Box-Cox and Taylor				</li>
+</ul>
+</li>
+<li>Kolmogorov-Smirnov test of normality			</li>
+<li>Box-Cox and Box-Cox-Bartlett normalizations			</li>
+<li>Ranging and standardization			</li>
+<li>Your choice of transformation				<ul>
+<li>Y' = a + bY				</li>
+<li>Y' = Y * exp(a)				</li>
+<li>Y' = exp(Y)				</li>
+<li>Y' = ln(a + bY)				</li>
+</ul>
+</li>
+<li>Multinormality test			</li>
+<li>Left to do				<ul><li>Taylor transformation				</li></ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="../../../../en/labo/R/v3/description/conversion.html">Convert</a> (Mard 23 févr 1999  at 15:09:34 by PhC)			<ul><li>Similarity &lt;-&gt; Distance matrix conversions			</li></ul>
+</li>
+<li>
+<a href="../../../../en/labo/R/v3/description/pcoord.html">PCoord</a>: Principal COORDinates (Lund 21 sept 1998  at 15:35:45 by PhC)			<ul>
+<li>Standard reduced-space ordinations for distance matrices (similarity matrices must be converted to distances first)			</li>
+<li>Lingoes (1971) and Cailliez (1983) corrections for negative eigenvalues; see <a href="../../../../en/labo/distpcoa.html">DistPCoA</a> for more information			</li>
+<li>Left to do				<ul><li>Iterative eigenvalue algorithm, useful for large datasets with no correction for negative eigenvalues				</li></ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="../../../../en/labo/R/v3/description/distancesgeo.html">GeoDistances</a> (Jeud 02 avri 1998  at 11:27:13 by PhC)			<ul><li>Requires data already formatted as decimal degrees (conversion from other formats will happen when importing a file)			</li></ul>
+</li>
+</ul>
+</li>
+<li>Use of <a href="http://www.boingo.com/waste/">WASTE</a> instead of TextEdit		<ul><li>&gt;32k of text in Text windows (limited by available memory)		</li></ul>
+</li>
+<li>
+<b><a href="../../../../en/labo/R/v4/diagrammes.html">Diagram types in the R Package</a></b>		<ul>
+<li>X-Y scatterplots with optional Z variable			<ul>
+<li>Types of Z variable (all documented in the manual):				<ul>
+<li>Group symbol, including "none" if you want no display of the points (e.g. you only want the ellipses)					<ul><li>Symbols are now highly contrasting and can be re-ordered					</li></ul>
+</li>
+<li>Label (number)				</li>
+<li>95% ellipse-grouping criteria (draw ellipses around a group of points)				</li>
+<li>Proportional "bubble"				</li>
+<li>Arrow: draw an arrow from the origin [0, 0] to the point itself. Very useful in CCA/RDA biplots.				</li>
+<li>Color (8 colors to choose from)				</li>
+</ul>
+</li>
+<li>You can also use row names (characters) as labels			</li>
+<li>Axes can be constrained to be proportional: if one centimeter equals 50 units horizontally, one centimeter will equal 50 units vertically. Very useful in ordination diagrams.			</li>
+<li>Bounds can be set on both axes			</li>
+<li>Settings are remembered when you double-click on a graph			</li>
+</ul>
+</li>
+<li>Link map (see Links)		</li>
+<li>Autocorrelograms			<ul><li>Now including regular or progressive Bonferroni correction			</li></ul>
+</li>
+<li>Histograms		</li>
+<li>Growth diagrams are now functional			<ul><li>They are a special kind of histogram for population dynamics			</li></ul>
+</li>
+<li>Saved diagrams can be re-opened and re-sized at will		</li>
+<li>All diagram windows can be set to an arbitrary size regardless of your screen size (e.g. 1600x1600 on a Mac Plus)		</li>
+<li>PICT image: paste any PICT from the clipboard		</li>
+<li>Distance comparison diagrams			<ul>
+<li>Useful in reduced-space ordination for reduced vs. original space distance comparison (called a Shepard diagram in this case)			</li>
+<li>One can also compare arbitrary distance matrices			</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The <strong>User's manual</strong> is coming along nicely, over 115 pages! 		<ul>
+<li>I try to document every feature in the manual, e.g. "Press the option key while clicking to do this..."		</li>
+<li>Note: the self-reading (.srd) version was dropped because it was getting too big (4.2 MB vs. 247k for the pdf version)		</li>
+</ul>
+</li>
+<li>Printing has been implemented!	</li>
+<li>Better import/export code		<ul>
+<li>Bug fix when importing unfolded triangulars		</li>
+<li>Export matrices in many formats		</li>
+</ul>
+</li>
+<li>Change language from French to English and back on the fly		<ul><li>Now uses stand-alone "dictionary" files		</li></ul>
+</li>
+<li>Import/Export text data file		<ul>
+<li>Export of S<small>IMIL</small>-type files (resemblance matrices) is no longer restricted to square matrix. You can export as:			<ul>
+<li>Lower triangular (with or without diagonal)			</li>
+<li>Upper triangular (with or without diagonal)			</li>
+<li>Unfolded lower triangular (without diagonal)			</li>
+<li>Unfolded upper triangular (without diagonal) <br><small>(This is the format required by <a href="../../../../en/labo/permute/index.html">Permute! version 3.4 alpha</a>)</small>			</li>
+<li>Square			</li>
+</ul>
+</li>
+<li>Import from text files			<ul>
+<li>Import DD MM SS-type data (i.e. GeoDist)			</li>
+<li>Progress thermometers			</li>
+<li>Faster scanning			</li>
+<li>Can import via drag-and-drop (user preference), also works for multiple imports if option key is held down!			</li>
+<li>Direct importation of D<small>OS</small> or U<small>NIX</small> text files			</li>
+<li>Rectangular (nxp) matrices			</li>
+<li>Resemblance matrices				<ul>
+<li>Square with diagonal				</li>
+<li>Unfolded upper triangular without diagonal				</li>
+<li>Unfolded lower triangular without diagonal				</li>
+<li>
+<i>Other formats coming soon</i>				</li>
+</ul>
+</li>
+<li>Parser is now faster and more robust; also used for Copy/Paste			</li>
+</ul>
+</li>
+<li>Text format is compatible with spreadsheet programs		</li>
+<li>Columns in files can be delimited with tabs, spaces or commas		</li>
+<li>Row and column headers		</li>
+</ul>
+</li>
+<li>Persistent user preferences		<ul>
+<li>Import text files via drag-and-drop		</li>
+<li>Language		</li>
+<li>Missing value indicator		</li>
+<li>Matrix display font		</li>
+<li>Number of decimals in matrix display		</li>
+<li>Binary computations threshold (i.e. above this value, everything is 1 and below, 0)		</li>
+</ul>
+</li>
+<li>Multithreading using Thread Manager (System 7.5 and up, there is an extension for previous systems)		<ul>
+<li>If the Thread Manager is present, one is able to run multiple, concurrent tasks and continue to use one's computer while computations are being made		</li>
+<li>One can also turn the multithreading off to use the full power of one's computer		</li>
+</ul>
+</li>
+<li>Open and save 		<ul>
+<li>Binary data files for accuracy and faster opening			<ul>
+<li>Matrix data (rows/cols)			</li>
+<li>S<small>IMIL</small>-type file (internally stored as a one row matrix)			</li>
+</ul>
+</li>
+<li>Text data files (computation results) in text display windows		</li>
+</ul>
+</li>
+<li>Copy and paste		<ul>
+<li>To clipboard			<ul>
+<li>Data matrix selection to clipboard, tab-delimited 				<ul><li>Internally kept as binary  (private clipboard) to prevent loss of precision when pasting between two data matrices				</li></ul>
+</li>
+<li>Text window to clipboard			</li>
+<li>Picture window to clipboard			</li>
+</ul>
+</li>
+<li>From clipboard			<ul>
+<li>Tab-delimited matrix text to a matrix (uses the import parser)			</li>
+<li>Append to text window from clipboard			</li>
+<li>Picture from clipboard (non-dynamic, though)			</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>On-screen display of rectangular matrices and S<small>IMIL</small>-type files 	</li>
+<li>Current data matrices limits:		<ul>
+<li>Rectangular matrices: 32,000 rows x 32,000 columns		</li>
+<li>S<small>IMIL</small> matrices: 32,000 values, which means 256 objects (256*255/2 = 32640)		</li>
+<li>I use 32,000 because it makes debugging easier!		</li>
+<li>When the Package will be released, the limits will be raised to 2,147,483,647 * 2,147,483,647		</li>
+<li>Everything is stored internally as <em>Long Integers</em>			<ul><li>The theoretical limit is not 32,000 (~ 2<sup>15</sup>-1) but 2,147,483,647 (2<sup>31</sup>-1)			</li></ul>
+</li>
+<li>Due to a design constraint in early versions of the R package, S<small>IMIL</small> matrices will never be able to handle more than 32,767 objects			<ul>
+<li>That is still 536,821,761 values!			</li>
+<li>And such a matrix would require over 5,110 <em>Megabytes</em> of memory and storage...			</li>
+<li>The theoretical limits of the internal format for S<small>IMIL</small> matrices is 46,341 objects, but to achieve it I would have to hack backward compatibility			</li>
+</ul>
+</li>
+<li>Note that there is an internal limit to the List Manager			<ul>
+<li>It cannot display more than 16,000 cells (e.g. a 400x40 matrix)			</li>
+<li>Larger matrices will only show the first 16,000 values			</li>
+<li>However, all values will be accessible for computation			</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Error reporting		<ul>
+<li>Use alert if Macsbug is not present		</li>
+<li>Distinguish between fatal and non-fatal errors		</li>
+</ul>
+</li>
+<li>Create empty files		<ul>
+<li>Text		</li>
+<li>Data matrices		</li>
+<li>Diagrams (pictures)			<ul>
+<li>Labels, arrows, ellipses, symbols, bubbles			</li>
+<li>Re-computed from original data upon window resize			</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PowerPC-native (fat binary)	</li>
+<li>Balloon help throughout		<ul><li>Though not completely translated...		</li></ul>
+</li>
+<li>
+<em>This list changes often... please bookmark it!</em><p></p>
+<p>	</p>
+</li>
+</ul>
+</li>
+<li>
+<strong>Left to do (in no particular order)</strong>	<ul>
+<li>Diagram types		<ul>
+<li>Dendrogram or tree		</li>
+<li>Chronological clustering		</li>
+</ul>
+</li>
+<li>Import/Export text data file		<ul>
+<li>Specify number of rows and columns		</li>
+<li>When exporting, allow the user to specify the number of columns to wrap the data		</li>
+</ul>
+</li>
+<li>Data processing		<ul><li>Fold/unfold S<small>IMIL</small>-type matrices (distance or similarity matrices) when copying and pasting		</li></ul>
+</li>
+<li>Picture processing		<ul><li>Zoom in/out		</li></ul>
+</li>
+<li>Help		<ul><li>AppleGuide (dependant on OSA support)		</li></ul>
+</li>
+<li>OSA support		<ul><li>OSA-compliant: scriptable and recordable		</li></ul>
+</li>
+</ul>
+<p>			</p>
+<hr>
+<h6 align="center">				Last updated on Saturday, March 30, 2013 by <a href="http://twitter.com/philippec">Philippe Casgrain</a> <br>				Created on  Saturday, April 05, 1997				</h6>			<!--<h6 align="center"><IMG ALIGN=MIDDLE SRC="http://www.jsp.umontreal.ca/cgi-bin/nph-count?link=http://twitter.com/philippeclabo/R/v4/progress.html"> accesses since February 22nd, 2000</h6>-->			
+    </li>
+</div>
+    <div id="sidebar">
+      <h2>Pierre Legendre</h2>
+      <ul>
+<li><a href="../../../index.html">Version française</a></li>
+        <li><a href="../../../indexEn.html">English version</a></li>
+        <li>
+            <a href="../../../FonctionsR/">Fonctions R</a>
+            /
+            <a href="../../../Rcode/">R Functions</a>
+        </li>
+        <li>
+            <a href="../../../donnees/">Jeux de données</a>
+            /
+            <a href="../../../data/">Datasets</a>
+        </li>
+        <li><a href="../../../Reprints/">Tirés-à-part / Reprints</a></li>
+        <hr>
+<li><a href="../../">Anciens logiciels / Older software</a></li>
+      </ul>
+<h2>Cours</h2>
+      <ul style="margin-bottom:10px;">
+<li style="margin-bottom:10px;"><a href="http://biol09.biol.umontreal.ca/Bio6077/">BIO 6077: Analyse quantitative des données biologiques</a></li>
+        <li style="margin-bottom:10px;"><a href="../../../Trieste16/">Recent Advances in Analysis of Multivariate Ecological Data: Theory and Practice</a></li>
+      </ul>
+</div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-66121190-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

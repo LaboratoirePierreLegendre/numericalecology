@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../../../../style.css" media="screen">
+<meta name="generator" content="nanoc 3.3.1">
+</head>
+<body>
+    <div id="main">
+      ---title: R: Links---<img src="../../../../../images/r3-icon-t.gif" height="32" width="32" align="middle" alt="[R 3.0 icon]" border="0"><strong>What does LINKS do ?</strong>	Program LINKS computes a variety of connecting schemes amonglocalities that are neighbors in space (in 1 or 2 dimensions) andwrites the resulting link edges into a file. Several spatial analysisprograms use these files as their source of information about theneighboring relationships that exist among localities; this is the caseof program <a href="autocorrelation.html">AUTOCOR</a> for spatial autocorrelation analysis, the spatiallyconstrained clustering programs <a href="biogeo.html">BIOGEO</a> and <a href="kmeans.html">K-MEANS</a>, as well as the<a href="cocopan.html">COCOPAN</a> analysis of variance program.	When the points form a regular grid on the map, it is easy to linkthe first neighbors using simple connecting schemes whose names arederived from the game of chess <a href="../references.html#9">(Cliff &amp; Ord, 1981)</a>: rook's(square), bishop's (diagonal), or king's connections (also calledqueen's: both square and diagonal).	When the localities are positioned in an irregular manner, geometricconnecting schemes may be used, such as the Gabriel's connection<a href="../references.html#10">(Gabriel &amp; Sokal, 1969)</a>, the Delaunay triangulation <a href="../references.html#11">(Dirichlet,1850</a>; <a href="../references.html#23">Upton &amp; Fingleton, 1985)</a>, or the relative neighborhood graph.There exists an inclusion relationship among those connecting schemes:all connexions that obey the relative neighborhood graph definition are alsomembers of the Gabriel graph, which in turn are all included in theDelaunay triangulation.<h6 align="center">	Last updated on Saturday, March 30, 2013 by <a href="http://twitter.com/philippec">Philippe Casgrain</a></h6>
+    </div>
+    <div id="sidebar">
+      <h2>Pierre Legendre</h2>
+      <ul>
+<li><a href="../../../../index.html">Version française</a></li>
+        <li><a href="../../../../indexEn.html">English version</a></li>
+        <li>
+            <a href="../../../../FonctionsR/">Fonctions R</a>
+            /
+            <a href="../../../../Rcode/">R Functions</a>
+        </li>
+        <li>
+            <a href="../../../../donnees/">Jeux de données</a>
+            /
+            <a href="../../../../data/">Datasets</a>
+        </li>
+        <li><a href="../../../../Reprints/">Tirés-à-part / Reprints</a></li>
+        <hr>
+<li><a href="../../../">Anciens logiciels / Older software</a></li>
+      </ul>
+<h2>Cours</h2>
+      <ul style="margin-bottom:10px;">
+<li style="margin-bottom:10px;"><a href="http://biol09.biol.umontreal.ca/Bio6077/">BIO 6077: Analyse quantitative des données biologiques</a></li>
+        <li style="margin-bottom:10px;"><a href="../../../../Trieste16/">Recent Advances in Analysis of Multivariate Ecological Data: Theory and Practice</a></li>
+      </ul>
+</div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-66121190-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

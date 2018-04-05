@@ -12,10 +12,14 @@ fi
 
 # Update main website
 pushd numecol
-nanoc compile
+# Disable nanoc for now as it's not installed
+#nanoc compile
 if [ $? -eq 0 ];
 then
-  rsync -avz output/ /Users/numericalecology/Sites/ --delete --exclude Streaming
+#  rsync -avz output/ /Users/numericalecology/Sites/ --delete --exclude Streaming
+# The old version of the site is stored in the "nanoc" folder so we'll use that for now
+# TODO: fix this so we generate the site from text files again
+  rsync -avz nanoc/ /Users/numericalecology/Sites/ --delete --exclude Streaming
 fi
 popd
 

@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<meta name="generator" content="nanoc 3.3.1">
+</head>
+<body>
+    <div id="main">
+      <h2>Program RdaCca</h2><small><a href="http://numericalecology.com/">Pierre Legendre</a><br>April 1998<br>Département de Sciences Biologiques<br>Université de Montréal<br></small><em>Note:</em> please see the <a href="../../en/labo/plrdacca.html">Polynomial RdaCca</a> for another approach to the RdaCca problem.This program performs two forms of canonical analysis, i.e. redundancy analysis (<a href="#ref">Rao, 1964</a>) and canonical correspondence analysis (<a href="#ref">ter Braak, 1986, 1987</a>), using multiple regression followed by direct eigenanalysis. The method of calculation is described in Chapter 11 of <a href="#ref">Legendre &amp; Legendre (1998)</a>.This program is a pedagogical tool. Its objective is to demonstrate that the calculations can indeed be carried out in this way, and to provide users with a simple program allowing one to obtain all the eigenvectors and ordination axes from PCA or CA ordination, or from canonical analysis (RDA or CCA). It is not meant to replace advanced programs for canonical ordination, such as <a href="http://www.microcomputerpower.com/catalog/canoco.html">C<small>ANOCO</small></a>. In particular, this program does not do forward selection of explanatory variables, nor does it carry out permutation tests of significance.Eigenanalysis is carried out using either a Householder procedure or singular value decomposition (SVD). The subroutines used are from <a href="http://www.nr.com/">Numerical Recipes</a> (<a href="#ref">Press <i>et al.</i>, 1986</a>).<ul>
+<li>
+<b><a href="../download.html#RdaCca">Macintosh version</a> </b>	<ul>
+<li>
+<a href="fortran.html">Fortran</a> source code for Macintosh (file RdaCca.f), which can be compiled using a <a href="fortran.html">Fortran</a> compiler. The user may modify the Parameter statement at the beginning of the program, which fixes the size (pmax) of the largest data matrix which may be analysed. 		</li>
+<li>Compiled versions of the program for Macintosh computers using 680x0, 680x0 + FPU, or PowerPC processor		</li>
+<li>Program documentation, in Word 6 format		</li>
+<li>Sample files	</li>
+</ul>
+</li>
+<li>
+<b><a href="../download.html#RdaCca">32-bit DOS version</a> </b>(The executable file is a Win32 "console" executable, not a DOS executable. Therefore it cannot run under plain DOS, nor in a DOS window under Windows 3.x, only in Windows 95/98 or Windows NT consoles) 	<ul>
+<li>
+<a href="fortran.html">Fortran</a> source code (file rdacca.for)		</li>
+<li>Compiled version of the program for Win32 compatible computers		</li>
+<li>Program documentation, in Word 6 format		</li>
+<li>Sample files	</li>
+</ul>
+</li>
+</ul>
+<a name="ref">References:</a><br><blockquote>Legendre, P. &amp; Legendre, L. 1998. <i><a href="http://numericalecology.com/">Numerical Ecology</a>, 2nd English edition.</i> <a href="http://www.elsevier.nl/">Elsevier Science</a> BV, Amsterdam. xv + 853 pages. Press, W. H., B. P. Flanery, S. A. Teukolsky &amp; W. T. Vetterling. 1986. <i><a href="http://www.nr.com/">Numerical Recipes</a> - The art of scientific computing</i>. Cambridge Univ. Press, Cambridge. xx + 818 p.Rao, C. R. 1964. The use and interpretation of principal component analysis in applied research. <i>Sankhya A</i> <b>26</b>: 329-358.ter Braak, C. J. F. 1986. Canonical correspondence analysis: a new eigenvector technique for multivariate direct gradient analysis. <i>Ecology</i> <b>67</b>: 1167-1179.ter Braak, C. J. F. 1987. The analysis of vegetation-environment relationships by canonical correspondence analysis. <i>Vegetatio</i> <b>69</b>: 69-77.</blockquote>
+    </div>
+    <div id="sidebar">
+      <h2>Pierre Legendre</h2>
+      <ul>
+<li><a href="../index.html">Version française</a></li>
+        <li><a href="../indexEn.html">English version</a></li>
+        <li>
+            <a href="../FonctionsR/">Fonctions R</a>
+            /
+            <a href="../Rcode/">R Functions</a>
+        </li>
+        <li>
+            <a href="../donnees/">Jeux de données</a>
+            /
+            <a href="../data/">Datasets</a>
+        </li>
+        <li><a href="../Reprints/">Tirés-à-part / Reprints</a></li>
+        <hr>
+<li><a href="./">Anciens logiciels / Older software</a></li>
+      </ul>
+<h2>Cours</h2>
+      <ul style="margin-bottom:10px;">
+<li style="margin-bottom:10px;"><a href="http://biol09.biol.umontreal.ca/Bio6077/">BIO 6077: Analyse quantitative des données biologiques</a></li>
+        <li style="margin-bottom:10px;"><a href="../Trieste16/">Recent Advances in Analysis of Multivariate Ecological Data: Theory and Practice</a></li>
+      </ul>
+</div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-66121190-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

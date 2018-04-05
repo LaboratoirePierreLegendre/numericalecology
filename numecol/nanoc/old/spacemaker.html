@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<meta name="generator" content="nanoc 3.3.1">
+</head>
+<body>
+    <div id="main">
+      		<h2 align="center">SpaceMaker 2</h2><h3 align="center">Generate spatial explanatory variables to be used in multiple regression or canonical ordination</h3><small><a href="http://biol09.biol.umontreal.ca/borcardd/">Daniel Borcard</a> and <a href="http://numericalecology.com/">Pierre Legendre</a><br>Département de Sciences Biologiques<br>Université de Montréal<br></small>SpaceMaker 2 is a program generating spatial descriptors to be used as explanatory variables in multiple regression or canonical ordination. The two types of spatial descriptors produced are:<ul>
+<li> polynomial terms for a trend-surface analysis equation (see for instance <a href="#ref">Legendre, 1990</a>; <a href="#ref">Borcard <i>et al.</i>, 1992</a>; <a href="#ref">Legendre &amp; Legendre, 1998</a>);</li>
+<li> principal coordinates of truncated matrices of Euclidean distances among sites (PCNM, see <a href="#ref">Borcard &amp; Legendre, 2002</a>; <a href="#ref">Legendre &amp; Borcard, 2003</a>; <a href="#ref">Borcard <i>et al.</i>,2004</a>).</li>
+</ul>The PCNM methods aims at identifying spatial patterns at any scale covered by a given sampling set. It consists in following steps:<ol>
+<li> Build a matrix of Euclidean (geographic) distances among sampling points.</li>
+<li> Truncate this distance matrix (at a user-defind threshold) so as to retain only the distance values corresponding to the nearest neighbors.</li>
+<li> Replaced the deleted values by an arbitrarily large distance value. This large distance equals four times the truncated threshold defined at step 2. Now, the distance matrix accurately represents the distances among close sampling points, and considers all the other pairs of points as "far apart".</li>
+<li> Compute the principal coordinates of the matrix obtained at step 3 (without correction for negative eigenvalues).</li>
+<li> Retain the eigenvectors corresponding to positive eigenvalues. These are the spatial explanatory variables to use in multiple regression or canonical ordination of the dependent variables.</li>
+</ol>
+<h3>Program availability</h3><ul>
+<li>
+<b><a href="../download.html#SpaceMaker2">MacOS X (Unix) version</a> </b>	<ul>
+<li>
+<a href="fortran.html">Fortran</a> source code				</li>
+<li>Compiled versions of the program for MacOSX		</li>
+<li>Program documentation	</li>
+</ul>
+</li>
+<li>
+<b><a href="../download.html#SpaceMaker2">MacOS 9 (Classic) version</a> </b>	<ul>
+<li>
+<a href="fortran.html">Fortran</a> source code				</li>
+<li>Compiled versions of the program for any Macintosh computer (fat binary)		</li>
+<li>Program documentation	</li>
+</ul>
+</li>
+<li>
+<b><a href="../download.html#SpaceMaker2">32-bit DOS version</a> </b>(The executable file is a Win32 "console" executable, not a DOS executable. Therefore it cannot run under plain DOS, nor in a DOS window under Windows 3.x, only in Windows 95/98 or Windows NT consoles) 	<ul>
+<li>
+<a href="fortran.html">Fortran</a> source code				</li>
+<li>Compiled version of the program for Win32 compatible computers		</li>
+<li>Program documentation	</li>
+</ul>
+</li>
+</ul>
+<a name="ref">References:</a><br><blockquote>Borcard, D., P. Legendre, C. Avois-Jacquet &amp; H. Tuomisto. 2004. <a href="http://adn.biol.umontreal.ca/~numericalecology/Reprints/PCNM_Borcard%20et%20al.pdf">Dissecting the spatial structure of ecological data at multiple scales</a>. <i>Ecology</i> <b>85</b>(7): 1826-1832 [Statistical report].Borcard, D., Legendre, P. &amp; Drapeau, P., 1992. Partialling out the spatial component of ecological variation. <i>Ecology</i> <b>73</b>: 1045-1055.Borcard, D. and P. Legendre. 2002. <a href="http://adn.biol.umontreal.ca/~numericalecology/Reprints/Scale_paper.pdf">All-scale spatial analysis of ecological data by means of principal  coordinates of neighbour matrices</a>. <i>Ecological Modelling</i> <b>153</b>: 51-68.Legendre, P., 1990. Quantitative methods and biogeographic analysis. In: D.J. Garbary and R.G. South (Editors), Evolutionary biogeography of the marine algae of the North Atlantic. NATO ASI Series, Vol. G 22. Springer-Verlag, Berlin, pp. 9-34.Legendre, P. &amp; D. Borcard. 2006. <a href="http://adn.biol.umontreal.ca/~numericalecology/Reprints/Ch_19_L&amp;B_(US_Letter).pdf">Quelles sont les échelles spatiales importantes dans un écosystème ? Chapitre 19 (p. 425-442)</a> <i>in</i>: J.-J. Droesbeke, M. Lejeune et G.Saporta (éds), Analyse statistique de données spatiales. Editions TECHNIP,Paris. [Manuscrit du chapitre en format PDF / Chapter manuscript in PDF format.]Legendre, P. &amp; Legendre, L. 1998. <i><a href="http://numericalecology.com/">Numerical Ecology</a>, 2nd English edition.</i> <a href="http://www.elsevier.nl/">Elsevier Science</a> BV, Amsterdam. xv + 853 pages. </blockquote>
+    </div>
+    <div id="sidebar">
+      <h2>Pierre Legendre</h2>
+      <ul>
+<li><a href="../index.html">Version française</a></li>
+        <li><a href="../indexEn.html">English version</a></li>
+        <li>
+            <a href="../FonctionsR/">Fonctions R</a>
+            /
+            <a href="../Rcode/">R Functions</a>
+        </li>
+        <li>
+            <a href="../donnees/">Jeux de données</a>
+            /
+            <a href="../data/">Datasets</a>
+        </li>
+        <li><a href="../Reprints/">Tirés-à-part / Reprints</a></li>
+        <hr>
+<li><a href="./">Anciens logiciels / Older software</a></li>
+      </ul>
+<h2>Cours</h2>
+      <ul style="margin-bottom:10px;">
+<li style="margin-bottom:10px;"><a href="http://biol09.biol.umontreal.ca/Bio6077/">BIO 6077: Analyse quantitative des données biologiques</a></li>
+        <li style="margin-bottom:10px;"><a href="../Trieste16/">Recent Advances in Analysis of Multivariate Ecological Data: Theory and Practice</a></li>
+      </ul>
+</div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-66121190-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

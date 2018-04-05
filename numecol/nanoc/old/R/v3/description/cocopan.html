@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../../../../style.css" media="screen">
+<meta name="generator" content="nanoc 3.3.1">
+</head>
+<body>
+    <div id="main">
+      ---title: R: Cocopan---<strong>What does COCOPAN do ?</strong>	This program carries out a one-way analysis of variance forspatially autocorrelated quantitative data when the classificationcriterion is a subdivision of the study area into nonoverlappingregions -- for instance countries, counties, language areas,geomorphological subdivisions of the study area, and so on, as found innumerous problems where the data points can be plotted on a map. Themethod has been described by <a href="../references.html#6">Legendre, Oden, Sokal, Vaudor and Kim(1990)</a>. The acronym COCOPAN stands for<strong>Co</strong><em>ntiguity-</em><strong>co</strong><em>nstrained</em><strong>p</strong><em>ermutational</em><strong>AN</strong><em>OVA.</em>	The principle of this permutation test is to keep the localitiesfixed, each preserving its values for the variables under study, so asto preserve the autocorrelation structure. The classificationcriterion, which consists of the division of the map into subregions,is permuted instead, with the following constraints: each pseudo-regionmust contain the same number of localities as the original region thatit represents; each pseudo-region must remain connected, that is, itmust form a continuous surface on the pseudo-map; finally, thepseudo-regions must occupy exactly the whole of the original map,without omission or excess. The program contains two algorithms toresolve the computation problem; the ring algorithm, created by AlainVaudor, and the random tree algorithm, developed by Junhyong Kim.	Several variables may be analyzed in a single run. The statisticsubjected to permutation testing is the sum, for all groups, of thewithin-group sums of squares (SSQ). After each permutation, the SSQstatistic is recomputed for that pseudo-map. Finally, the SSQ value forthe true map is compared to the distribution of the SSQ values obtainedfor the pseudo-maps. So, this is a one-tailed test and the criticalarea is the lower tail of the distribution.<h6 align="center">	Last updated on Saturday, March 30, 2013 by <a href="http://twitter.com/philippec">Philippe Casgrain</a></h6>
+    </div>
+    <div id="sidebar">
+      <h2>Pierre Legendre</h2>
+      <ul>
+<li><a href="../../../../index.html">Version française</a></li>
+        <li><a href="../../../../indexEn.html">English version</a></li>
+        <li>
+            <a href="../../../../FonctionsR/">Fonctions R</a>
+            /
+            <a href="../../../../Rcode/">R Functions</a>
+        </li>
+        <li>
+            <a href="../../../../donnees/">Jeux de données</a>
+            /
+            <a href="../../../../data/">Datasets</a>
+        </li>
+        <li><a href="../../../../Reprints/">Tirés-à-part / Reprints</a></li>
+        <hr>
+<li><a href="../../../">Anciens logiciels / Older software</a></li>
+      </ul>
+<h2>Cours</h2>
+      <ul style="margin-bottom:10px;">
+<li style="margin-bottom:10px;"><a href="http://biol09.biol.umontreal.ca/Bio6077/">BIO 6077: Analyse quantitative des données biologiques</a></li>
+        <li style="margin-bottom:10px;"><a href="../../../../Trieste16/">Recent Advances in Analysis of Multivariate Ecological Data: Theory and Practice</a></li>
+      </ul>
+</div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-66121190-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

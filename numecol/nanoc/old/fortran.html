@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<meta name="generator" content="nanoc 3.3.1">
+</head>
+<body>
+    <div id="main">
+      <title>Fortran compilers</title>		Several of our programs are written in the Fortran programming language (specifically, Fortran 77). We all our development using <a href="http://www.fortner.com/">Fortner Software</a>'s Fortran compiler, née Language Systems Fortran and now defunct. If you would like to compile our programs yourself, here are some solutions:<table border cellpadding="5" cellspacing="10">
+<tr align="LEFT">
+<td align="CENTER">	Platform 	</td>	<td align="CENTER">	Compiler 	</td>	<td align="CENTER">	Cost	</td>	<td align="CENTER">	Notes	</td></tr>
+<tr align="LEFT">
+<td align="LEFT">	DOS	</td>	<td align="LEFT">	<a href="ftp://ftp.simtel.net/pub/simtelnet/msdos/fortran/bcf7713b.zip">BC Fortran</a>	</td>	<td align="LEFT">	Free	</td>	<td align="LEFT">	Fortran 77 Compiler for MS DOS (SIMTEL)	</td></tr>
+<tr align="LEFT">
+<td align="LEFT">	MacOS 7-8-9 <br>("Classic")	</td>	<td align="LEFT">	<a href="http://www.absoft.com/">Absoft</a> Fortran	</td>	<td align="LEFT">	USD 899	</td>	<td align="LEFT">	<em>We could not find a free compiler for MacOS 7-9</em>	</td></tr>
+<tr align="LEFT">
+<td align="LEFT">	MacOS X<br>(Darwin)	</td>	<td align="LEFT">	<a href="ftp://ftp.gnu.org/pub/gnu/g77/">GNU Fortran</a> (g77)	</td>	<td align="LEFT">	Free	</td>	<td align="LEFT">	We have started using this compiler for our own programs, and the results are very satisfying.<br>	We recommend the use of <a href="http://fink.sourceforge.net/">fink</a> to install it (as well as any Unix software for MacOS X).	</td></tr>
+<tr align="LEFT">
+<td align="LEFT">	Unix	</td>	<td align="LEFT">	<a href="ftp://ftp.gnu.org/pub/gnu/g77/">GNU Fortran</a> (g77)	</td>	<td align="LEFT">	Free	</td>	<td align="LEFT">	Most Unix implementations already have a Fortran compiler installed, called f77 or g77	</td></tr>
+<tr align="LEFT">
+<td align="LEFT" rowspan="2">	Win32	</td>	<td align="LEFT">	<a href="http://kkourakis.tripod.com/">GNU Fortran</a> (g77) for Win32	</td>	<td align="LEFT">	Free	</td>	<td align="LEFT">	This is the compiler we use to generate 32-bit DOS executables, and we have a fairly good deal of experience with it.	</td></tr>
+<tr align="LEFT">
+<td align="LEFT">	<a href="http://www.salford.co.uk/software/compilers/ftn77pe.html">FTN77pe</a>	</td>	<td align="LEFT">	Free	</td>	<td align="LEFT">	Fortran 77 Compiler from Salford Software (free for non-commercial use only)	</td></tr>
+</table>We recommend that you try to compile the DOS source code, as it is the most portable; the MacOS source code has a few oddities to accomodate Mac-like file selection, for instance.Note that we cannot offer technical support for any of those compilers. Our experiences with f77/g77 on Unix, g77 on Win32 and LSF on MacOS has shown each compiler to be fussy in its own way. Please, try to find help locally before e-mailing us.			<p>			</p>
+<hr>
+<h6 align="center">				Last updated on Tuesday, February 14, 2006 by <a href="http://twitter.com/philippec/">Philippe Casgrain</a> <br>				Created on  Wednesday, February 23, 2000				</h6>			<!--<h6 align="center"><IMG ALIGN=MIDDLE SRC="http://www.jsp.umontreal.ca/cgi-bin/nph-count?link=http://twitter.com/philippec/fortran.html"> accesses since February 22nd, 2000</h6>-->			
+    </div>
+    <div id="sidebar">
+      <h2>Pierre Legendre</h2>
+      <ul>
+<li><a href="../index.html">Version française</a></li>
+        <li><a href="../indexEn.html">English version</a></li>
+        <li>
+            <a href="../FonctionsR/">Fonctions R</a>
+            /
+            <a href="../Rcode/">R Functions</a>
+        </li>
+        <li>
+            <a href="../donnees/">Jeux de données</a>
+            /
+            <a href="../data/">Datasets</a>
+        </li>
+        <li><a href="../Reprints/">Tirés-à-part / Reprints</a></li>
+        <hr>
+<li><a href="./">Anciens logiciels / Older software</a></li>
+      </ul>
+<h2>Cours</h2>
+      <ul style="margin-bottom:10px;">
+<li style="margin-bottom:10px;"><a href="http://biol09.biol.umontreal.ca/Bio6077/">BIO 6077: Analyse quantitative des données biologiques</a></li>
+        <li style="margin-bottom:10px;"><a href="../Trieste16/">Recent Advances in Analysis of Multivariate Ecological Data: Theory and Practice</a></li>
+      </ul>
+</div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-66121190-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

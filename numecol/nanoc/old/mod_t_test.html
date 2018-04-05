@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<meta name="generator" content="nanoc 3.3.1">
+</head>
+<body>
+    <div id="main">
+      <small><a href="http://numericalecology.com/">Pierre Legendre</a><br>June 2000<br>Département de Sciences Biologiques<br>Université de Montréal<br></small>This program computes a t-test for a Pearson correlation coefficient corrected for spatial autocorrelation, following <a href="#ref">Dutilleul (1993)</a>.In this version of the program, the main input data file (text) must contain 4 columns: Coordinate X, Coordinate Y, Variable 1, Variable 2. The program assumes the coordinates to be in a Cartesian plane.One may provide files with one's own limits of distance classes, pre-computed Moran's I autocorrelation coefficients, as well as an upper-triangular matrix of distance classes, if one so wishes. These elements are not necessary, however. In the absence of such matrices, the program will do all calculations from the input data matrix of the previous paragraph, using equidistant classes.If the user provides the value of the Spearman correlation coefficient, the associated probability will be computed and printed after that of the Pearson correlation coefficient.The probabilities computed by the program are for two-tailed tests. It is obtained by linear interpolation between the values computed for the integer values of d.f. above and below the corrected real-valued degrees of freedom, which are printed as "df" on output.<h3>Program availability</h3><ul>
+<li>
+<b><a href="../download.html#Modifiedttest">Macintosh version</a> </b>	<ul>
+<li>
+<a href="fortran.html">Fortran</a> source code		</li>
+<li>Compiled versions of the program for any Macintosh computer (fat binary)		</li>
+<li>Sample data file	</li>
+</ul>
+</li>
+<li>
+<b><a href="../download.html#Modifiedttest">32-bit DOS version</a> </b>(The executable file is a Win32 "console" executable, not a DOS executable. Therefore it cannot run under plain DOS, nor in a DOS window under Windows 3.x, only in Windows 95/98 or Windows NT consoles) 	<ul>
+<li>
+<a href="fortran.html">Fortran</a> source code		</li>
+<li>Compiled version of the program for Win32 compatible computers		</li>
+<li>Sample data file	</li>
+</ul>
+</li>
+</ul>
+<a name="ref">References:</a><br><blockquote>Dutilleul, P. 1993. Modifying the t test for assessing the correlation between two spatial processes. <i>Biometrics</i> <b>49</b>: 305-314.</blockquote>
+    </div>
+    <div id="sidebar">
+      <h2>Pierre Legendre</h2>
+      <ul>
+<li><a href="../index.html">Version française</a></li>
+        <li><a href="../indexEn.html">English version</a></li>
+        <li>
+            <a href="../FonctionsR/">Fonctions R</a>
+            /
+            <a href="../Rcode/">R Functions</a>
+        </li>
+        <li>
+            <a href="../donnees/">Jeux de données</a>
+            /
+            <a href="../data/">Datasets</a>
+        </li>
+        <li><a href="../Reprints/">Tirés-à-part / Reprints</a></li>
+        <hr>
+<li><a href="./">Anciens logiciels / Older software</a></li>
+      </ul>
+<h2>Cours</h2>
+      <ul style="margin-bottom:10px;">
+<li style="margin-bottom:10px;"><a href="http://biol09.biol.umontreal.ca/Bio6077/">BIO 6077: Analyse quantitative des données biologiques</a></li>
+        <li style="margin-bottom:10px;"><a href="../Trieste16/">Recent Advances in Analysis of Multivariate Ecological Data: Theory and Practice</a></li>
+      </ul>
+</div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-66121190-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

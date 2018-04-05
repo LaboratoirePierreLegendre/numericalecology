@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<meta name="generator" content="nanoc 3.3.1">
+</head>
+<body>
+    <div id="main">
+      			<h2>Program for multiple linear regression with permutation test. The program includes regression through the origin.</h2><small><a href="http://numericalecology.com/">Pierre Legendre</a><br>December 1999<br>Département de Sciences Biologiques<br>Université de Montréal<br></small>	This program computes a multiple linear regression and performstests of significance of the equation parameters using permutations. Inthis new version, the regression line can be forced through the origin.Permutation testing is recommended when the residuals of the regressionequation are not normally distributed; it does not solve the problemscaused by heteroscedasticity. Two permutation methods are available in theprogram:<ol type="1" start="1">
+<li>Permutation of the raw data.	</li>
+<li>Permutation of residuals of the full regression model (<a href="#ref">ter Braak 1990, 1992</a>).</li>
+</ol>Details about these permutation methods are given in <a href="#ref">Legendre &amp; Legendre (1998, pp. 606-612)</a> and in <a href="#ref">Anderson &amp; Legendre (1999)</a>.	Monte Carlo simulations conducted by <a href="#ref">Anderson &amp; Legendre (1999)</a> concluded that:<ul type="DISC">
+<li>For data with non-normal error structure, permutation tests had type I error closer to the nominal significance level alpha and greater power than the normal-theory t-test.	</li>
+<li>Permutation of raw data and permutation of residuals gave asymptotically equivalent results in most situations and provided good approximative tests for partial regression coefficients. 	</li>
+<li>Permutation of raw data resulted in unstable (and often inflated) type I error when the covariable  contained an extreme outlier, whether or not there was collinearity between predictor variables, or the data were normal or non-normal. This problem was not amended with increasing sample sizes.	</li>
+<li>The presence of outliers in the covariable did not adversely affect the tests based on permutation of residuals.</li>
+</ul>	Thus, permutation of raw data should not be used when the covariables contain (or may contain) outliers; permutation of residuals should be used in that case.<h3>Program availability</h3><ul>
+<li>
+<b><a href="../download.html#Multiplelinearregression">Macintosh version</a> </b>	<ul>
+<li>
+<a href="fortran.html">Fortran</a> source code for Macintosh (file Regression_test.f), which can be compiled using a <a href="fortran.html">Fortran</a> compiler. The user may modify the Parameter statement at the beginning of the program, which fixes the size (nmax, mmax) of the largest data matrix which may be analysed. 		</li>
+<li>Compiled versions of the program for any Macintosh computer, including MacOS X		</li>
+<li>Program documentation, in Adobe <a href="http://www.adobe.com/prodindex/acrobat/readstep2.html">Acrobat</a> format		</li>
+<li>Sample files	</li>
+</ul>
+</li>
+<li>
+<b><a href="../download.html#Multiplelinearregression">32-bit DOS version</a> </b>(The executable file is a Win32 "console" executable, not a DOS executable. Therefore it cannot run under plain DOS, nor in a DOS window under Windows 3.x, only in Windows 95/98 or Windows NT consoles) 	<ul>
+<li>
+<a href="fortran.html">Fortran</a> source code (file regressn.f)		</li>
+<li>Compiled version of the program for Win32 compatible computers		</li>
+<li>Program documentation, in Adobe <a href="http://www.adobe.com/prodindex/acrobat/readstep2.html">Acrobat</a> format		</li>
+<li>Sample files	</li>
+</ul>
+</li>
+</ul>
+<h3><a name="ref">References:</a></h3><ol>
+<li>Anderson, M. J. &amp; P. Legendre. 1999. An empirical comparison of permutation methods for tests of partial regression coefficients in a linear model. <i>Journal of Statistical Computation and Simulation</i> <b>62</b>: 271-303.</li><li>Legendre, P. &amp; Legendre, L. 1998. <i><a href="http://numericalecology.com/">Numerical Ecology</a>, 2nd English edition.</i> <a href="http://www.elsevier.nl/">Elsevier Science</a> BV, Amsterdam. xv + 853 pages. </li><li>"Legendre_Desdevises_JTB_in_press.pdf"</li><li>Sokal, R. R. &amp; F. J. Rohlf. 1995. Biometry - The principles and practice of statistics in biological research. 3rd edition. W. H. Freeman, New York.</li><li>ter Braak, C. J. F. 1990. Update notes: CANOCO version 3.10. Agricultural Mathematics Group, Wageningen.</li><li>ter Braak, C. J. F. 1992. Permutation versus bootstrap significance tests in multiple regression and ANOVA. 79-86 in: K.-H. Jöckel, G. Rothe &amp; W. Sendler [eds.] Bootstrapping and related techniques. Springer-Verlag, Berlin.</li></ol>
+</div>
+    <div id="sidebar">
+      <h2>Pierre Legendre</h2>
+      <ul>
+<li><a href="../index.html">Version française</a></li>
+        <li><a href="../indexEn.html">English version</a></li>
+        <li>
+            <a href="../FonctionsR/">Fonctions R</a>
+            /
+            <a href="../Rcode/">R Functions</a>
+        </li>
+        <li>
+            <a href="../donnees/">Jeux de données</a>
+            /
+            <a href="../data/">Datasets</a>
+        </li>
+        <li><a href="../Reprints/">Tirés-à-part / Reprints</a></li>
+        <hr>
+<li><a href="./">Anciens logiciels / Older software</a></li>
+      </ul>
+<h2>Cours</h2>
+      <ul style="margin-bottom:10px;">
+<li style="margin-bottom:10px;"><a href="http://biol09.biol.umontreal.ca/Bio6077/">BIO 6077: Analyse quantitative des données biologiques</a></li>
+        <li style="margin-bottom:10px;"><a href="../Trieste16/">Recent Advances in Analysis of Multivariate Ecological Data: Theory and Practice</a></li>
+      </ul>
+</div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-66121190-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
