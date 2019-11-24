@@ -1,0 +1,15 @@
+Package: constr.hclust
+Type: Package
+Version: 1.0-4
+Date: 2019-11-22
+Encoding: UTF-8
+Title: Space- And Time-Constrained Clustering Package
+Author: Pierre Legendre and Guillaume Guénard
+Maintainer: Pierre Legendre <pierre.legendre@umontreal.ca>
+Depends: R (>= 3.5.0), ade4, sf, sp, spdep, adespatial
+Description: Space-constrained or time-constrained agglomerative clustering from a multivariate dissimilarity matrix.
+License: GPL-3
+LazyLoad: yes
+NeedsCompilation: yes
+RoxygenNote: 6.1.1
+Packaged: 2019-11-22 18:21:25 UTC; guenardg

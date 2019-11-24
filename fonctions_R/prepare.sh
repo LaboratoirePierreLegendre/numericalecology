@@ -36,10 +36,6 @@ zip -f "$DEST/PCA.zip" *
 cd "../../"
 #zip -f -j "$DEST/PCA.zip" "PCA-CA/PCA/*"
 
-R CMD build const.clust
-cp const.clust_1.3.tar.gz "$DEST/"
-R CMD INSTALL --build const.clust
-cp const.clust_1.3.tgz "$DEST/"
 R CMD build rdaTest
 cp rdaTest_1.10.tar.gz "$DEST/"
 R CMD INSTALL --build rdaTest
