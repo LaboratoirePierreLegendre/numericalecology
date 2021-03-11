@@ -3,7 +3,7 @@
 # Update the whole folder to the latest
 cd /Users/numericalecology/numericalecology
 
-/usr/bin/git pull origin master
+/usr/bin/git pull origin main
 if [ $? -ne 0 ];
 then
   echo "There was an issue with the git update. Exiting."
