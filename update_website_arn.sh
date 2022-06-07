@@ -1,5 +1,6 @@
 #!/bin/sh
 
+date
 # Update the whole folder to the latest
 cd /Users/legendrepierre/numericalecology
 
